@@ -12,7 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: tailscale-repo
-        namespace: flux-system
+        namespace: management-stack
   valuesFrom:
     - kind: Secret
       name: tailscale-values

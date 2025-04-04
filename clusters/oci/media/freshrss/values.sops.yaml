@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s/helm-charts/app-template-3.2.0/charts/other/app-template/values.schema.json
+controllers:
+    main:
+        strategy: Recreate
+        containers:
+            main:
+                image:
+                    repository: ghcr.io/linuxserver/freshrss
+                    tag: arm64v8-1.18.1-ls105
+                env:
+                    - name: ENC[AES256_GCM,data:2jk=,iv:GU5xFZbueut3ncIpIUi8uG/SrLs1sMpYZJuRc5aFFz0=,tag:HkyoLjREUf/9m+o9AtOejA==,type:str]
+                      value: ENC[AES256_GCM,data:uwRmQpJ4zXP/3Rpw,iv:N26BC9YIoAvliQ1iKuGh+kHjzw3dn4ot/g4GTsWrOMs=,tag:who2mUHz8dlEa/a1WenOeA==,type:str]
+                    - name: ENC[AES256_GCM,data:nVxBdA==,iv:nAK8IEdLAaQOUu4RBvxu4ufq11UeUNiT47BNhhxjCqU=,tag:XcfFuAVSu8XFK8Ehaya4pA==,type:str]
+                      value: ENC[AES256_GCM,data:XFuuHg==,iv:gh/erzs6Wdtd3tqPLRGSlzb2F48poqgThe0pdlKgP3o=,tag:JBzM+Ssh8heZT7HI/KI2jg==,type:str]
+                    - name: ENC[AES256_GCM,data:lCGN4A==,iv:QudjT55xKzpy6L79Iw1tT6h1rlKdejHr1Z8M3LgUS1M=,tag:sLe5/S2FuOIEUzVzPJ0UNA==,type:str]
+                      value: ENC[AES256_GCM,data:XFuuHg==,iv:gh/erzs6Wdtd3tqPLRGSlzb2F48poqgThe0pdlKgP3o=,tag:JBzM+Ssh8heZT7HI/KI2jg==,type:str]
+                #   -- environment variables. See more environment variables in the [freshrss documentation](https://github.com/linuxserver/docker-freshrss#parameters).
+service:
+    main:
+        controller: main
+        ports:
+            http:
+                port: 80
+ingress:
+    main:
+        annotations:
+            external-dns.alpha.kubernetes.io/hostname: ENC[AES256_GCM,data:SPwkb9QmyZJDvUSieqZrmwt8gTAW,iv:Usgd0tU4/+IFkZupU5sPNVSEYyH9xMmWScLm7Yk2Pp4=,tag:VQmNc7YNYN3GAr8riSxasg==,type:str]
+            external-dns.alpha.kubernetes.io/enabled: ENC[AES256_GCM,data:o3hL+A==,iv:3H/RUsu8DxLiO/HslvbZwR654tl5usI++MTQUBcvzL4=,tag:JsmALC0TvX9En927iMXDjw==,type:str]
+            kubernetes.io/ingress.class: ENC[AES256_GCM,data:2tO0dSNOtw==,iv:jpRuaxrjzgoE6aV2IPFl5VyVqZ7BQb64vHDbOfePd2g=,tag:u5lvps8Zu26gtIWrnqUKrA==,type:str]
+        enabled: true
+        hosts:
+            - host: ENC[AES256_GCM,data:QQgat7s+1tZA1TN1ztx2w+vaNp7s,iv:pR4+zoID8adQV/4cJ3BYNnCMUQVDZhmKYEIVKRRObpE=,tag:/yf2A+pWEUUUtE5PacP5bA==,type:str]
+              paths:
+                - path: ENC[AES256_GCM,data:mw==,iv:w4zHz07lKn7Wcmwmz1JQOsgv8Ly9PhXkx0cFkgoQm/M=,tag:rPSil1hgiqY3amTFEoG42Q==,type:str]
+                  pathType: ENC[AES256_GCM,data:6AKmhUkJ,iv:YXW0Jg4snuYy+i7EZtAsatrlhn4oaPnQYCQ29nwZGSY=,tag:vzVJ+X5HOLyeZg/+ltbtBA==,type:str]
+                  service:
+                    identifier: ENC[AES256_GCM,data:abNBBg==,iv:o2d76YEixbUoOJQLZlCiHVolKVUwz0ny7lV/92o7aLk=,tag:oUuqrMeJQ9/byXcUNzx2rQ==,type:str]
+persistence:
+    config:
+        enabled: true
+        size: 500Mi
+        accessMode: ReadWriteOnce
+        type: persistentVolumeClaim
+        storageClass: nfs-client
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBadU1mSEhWVVNjbDhBNkFF
+            SkRud1ZDWmVJZFgzSW9MTHhDTmxNd1l3MTA4Ck9xbVlDMFVETHBKQmJBNko5KytK
+            OTcxUmlZM3JDVFcyWHBwYUthSC81S0kKLS0tIHpHbEV5dVBPa2FkYWxQZEhzRTVP
+            ZUM5N1lqQVZXNXdkZ040Y3ROaXhsOVkK4Eq2Mj890hl2V5kzc4NPOqzCIJgAhVxN
+            anPqiQd2zlMCY8jdVWdVwEO2JXJ7Sr+023lMhwNJCWAsarUj22swdA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-04-04T19:28:28Z"
+    mac: ENC[AES256_GCM,data:HH4FK+bkl60l0/Ol1bBrKPS4H7Z9qGMkRG9yUWFBqKugC1+pzZ1qJpiCQZYxPz/iunlLlfCbsv7aUyT3uTt2lDStG39MUoZ5owjX1QivoKwxndomKBWxpTV5jO5U4K2tvBFk8TALsYUWQ9K97LgvThAUknQNI+2qMhLaPoDTW3M=,iv:jwGzx7ycm406lkjJyYMdKGO/BaZeQb1ZDlr+2CMNILY=,tag:vIeQzvUPIKm2Py2eZQQoVw==,type:str]
+    pgp: []
+    encrypted_regex: ^(id|secret|password|extraEnv|env|encryption_key|data|stringData|host|db|influxdb_v2|clientId|clientSecret)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$
+    version: 3.9.1

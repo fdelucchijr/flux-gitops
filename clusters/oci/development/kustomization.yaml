@@ -4,7 +4,7 @@ resources:
   - ./n8n/release.yaml
   - ./n8n/repository.yaml
   - ./directus/release.yaml
-namespace: flux-system
+namespace: development
 configurations:
   - kustomizeconfig.yaml
 secretGenerator:

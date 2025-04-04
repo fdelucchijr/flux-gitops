@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ./kavita/release.yaml
+  - ./freshrss/release.yaml
+namespace: media-stack
+configurations:
+  - kustomizeconfig.yaml
+secretGenerator:
+  - name: kavita-values
+    files:
+      - values.yaml=./kavita/values.sops.yaml
+  - name: freshrss-values
+    files:
+      - values.yaml=./freshrss/values.sops.yaml
