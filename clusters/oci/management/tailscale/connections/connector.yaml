@@ -1,0 +1,11 @@
+apiVersion: tailscale.com/v1alpha1
+kind: Connector
+metadata:
+  name: ts-pod-cidrs
+  namespace: management-stack
+spec:
+  hostname: kube-gateway
+  subnetRouter:
+    advertiseRoutes:
+      - "10.0.0.0/8"
+      - "169.254.169.254/32"
