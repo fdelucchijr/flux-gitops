@@ -1,0 +1,44 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  labels:
+    app.kubernetes.io/instance: directus
+    app.kubernetes.io/name: directus
+  name: directus
+  namespace: development
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: ENC[AES256_GCM,data:C1jPM9OImFm33igH0Ofo,iv:NlJDfrf86jhS2OHvBOnp13qCsrqIybszZJXUWYqIC0Y=,tag:v8k9ElWCQ9j1KfiJ5xbJuw==,type:str]
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: ENC[AES256_GCM,data:w0CeRuM=,iv:whXdViW3wetmNbunoqvo+G2OCRmULo9cRJ5dig3S2Ws=,tag:Aq2J19MEFzYyPVxynNVgpw==,type:str]
+    kubernetes.io/ingress.class: ENC[AES256_GCM,data:FlBoU9Bz7w==,iv:N0TTyTzuYYSQqUDaOThJOn+8HsiCFAski6D0dZSZ6EE=,tag:jPYP2veiBrriwk39qYn2nQ==,type:str]
+spec:
+  rules:
+    - host: ENC[AES256_GCM,data:CIO6d0Yrnk2zyCZxvuG+,iv:u/udJbi8R9mmfCFIHHJwp/QdeCOzOjTP9aflZD/0fH4=,tag:kfVcC8+oh6Xni31tQNv1pQ==,type:str]
+      http:
+        paths:
+          - backend:
+              service:
+                name: directus
+                port:
+                  number: 80
+            path: /
+            pathType: ImplementationSpecific
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBGeXJxejlwdkpobW9XT1Fx
+        TEd5a3ZhR3dLUEgyVlZUWWMxNDMvTFJlS1NzCmNPL1FMVFpVY3ptT1hvZjVsaTIw
+        WFYzOThnQjJZR1hNMnU2dVRBbjdUb00KLS0tIHYzZG5GQ2VmL0N1VFZ1TjZEQXVP
+        K05JRTlIMnoxcENGUTlxY1oxYnJoRUEKB5aUe8tW6ArfPDK5Hmg+abxRJG9oaMWP
+        CjVigEB0SPU77dswIxU/mEMV+hpZLu0ttjKIhiQB+wbAVYFCIBrRqg==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2025-04-04T01:22:17Z"
+  mac: ENC[AES256_GCM,data:+05rlgKGkisp5tserpbLqaoYcXwJ2WGVGqlZyY4j0VTK5Ag2flJJ1MwxtMHOqEBgNziHz7PTTkzv2bLe4+wQRbdun5Wc9vBqhVKauFJK+9utMGutoue0Ilwure5Qp1gPqN3LoAGqMUS3nszuZLLAXLTlqR0xSmqLr8sVsg1KOYw=,iv:P5tYp5GYLxLvvzABSFuxQLYmC3hD1w5On09RDsEvqBM=,tag:zyDYakL9Abvavnv+VYgsKg==,type:str]
+  pgp: []
+  encrypted_regex: ^(id|secret|password|extraEnv|encryption_key|data|stringData|host|db)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$
+  version: 3.9.1

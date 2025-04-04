@@ -13,3 +13,6 @@ spec:
         kind: HelmRepository
         name: bjw-app-template-repo
         namespace: flux-system
+  values:
+    - kind: Secret
+      name: kavita-values

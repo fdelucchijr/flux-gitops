@@ -13,3 +13,6 @@ spec:
         kind: HelmRepository
         name: n8n-repo
         namespace: flux-system
+  values:
+    - kind: Secret
+      name: n8n-values

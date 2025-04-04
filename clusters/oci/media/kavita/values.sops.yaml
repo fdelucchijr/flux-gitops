@@ -1,0 +1,65 @@
+image:
+  repository: jvmilazz0/kavita
+  tag: 0.8.5
+env:
+  TZ: America/Lima
+service:
+  main:
+    ports:
+      http:
+        port: 5000
+ingress:
+  main:
+    enabled: true
+    annotations:
+      external-dns.alpha.kubernetes.io/cloudflare-proxied: ENC[AES256_GCM,data:ActVyRg=,iv:2Gbqb9B3tMf/PMfoNNL0A67fhvOJurxNa61xa75LFjQ=,tag:lTGL8He9wiL5X0NCqXtEXQ==,type:str]
+      external-dns.alpha.kubernetes.io/enabled: ENC[AES256_GCM,data:8ALzQw==,iv:dUiBWByGavI7kMxYMz9eSTS+Nc/Obw5oM4koKN29gl0=,tag:EG4UL0lvIzcnGBVeIhsbsQ==,type:str]
+      kubernetes.io/ingress.class: ENC[AES256_GCM,data:hjWgWuuLtg==,iv:AYdHqj+79Ho0ADq0ggeX53PYgf6dy+a3bOAGF2Dv+Vg=,tag:tm9fVlLttao+F3fqMAnCgw==,type:str]
+    hosts:
+      - host: ENC[AES256_GCM,data:vIpRkBusro7WQJD0z6FMgyy8BYYkYGMPlw==,iv:Y6un71Gz+eE403mi7p8dqNZ5M6Fnxa9sV0FzAdZLbV8=,tag:esNJGNYRIhEoZohuN8bpSA==,type:str]
+        paths:
+          - path: ENC[AES256_GCM,data:/Q==,iv:Gmj63HqfhPs9oXk8vXgx0k8iEYMlToEFUHDuLNCsBVw=,tag:e/Srw6XRd4EY3wv2+mTChw==,type:str]
+            pathType: ENC[AES256_GCM,data:NhPaMdPd,iv:T8Ev20m3my4Hhvz91NeIRxG5nW+f1R0q9UJslZTuFVI=,tag:rSRGe5uNNsrk4zPAsic4Cg==,type:str]
+persistence:
+  config:
+    enabled: true
+    size: 30Mi
+    type: pvc
+    accessMode: ReadWriteOnce
+    storageClass: nfs-client
+    mountPath: /kavita/config
+  media:
+    enabled: true
+    size: 500Mi
+    type: pvc
+    accessMode: ReadWriteMany
+    storageClass: nfs-client
+    mountPath: /media
+  backups:
+    enabled: false
+# resources:
+#   requests:
+#     cpu: 20m
+#     memory: 100Mi
+# limits:
+# memory: 200Mi
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA5bFcya1NuWVJOWHhLK0xO
+        eG0rWElTTll5WFZ4d2RtS2xneitzV1RqVlNzCjBOZWZXRmhvSncyM3AzQVl4RndU
+        MXY1LzdoL2ZJS2JoQTBRODZmeCt2QmcKLS0tIHZxaDE2Uk04VXl0QmVUVzhzS0Rr
+        S2VIblZqVVV6V20rdTVGaU4vUVQzNE0Kk1TdG2P05WsMQLIp0uXxOT4LO8UnkdDN
+        i4IjyEQF+sRxMj5ks0/HvbswhEBie7qM5A6Yy8pnx3WA1zOFxalg6g==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2025-04-04T01:51:05Z"
+  mac: ENC[AES256_GCM,data:fi7+d0wX+6Cr4ZF2xdLUc11eYlTVRuOyvOt0OVIu+/fc1k8RMGdz5TBt+u5zcitpTn25ClyeoYJ12TirP3ISlj7aWCeElF3EDs4p1SMfPhgrQ9zqI975gU+CICmgu5jmtR+/JNolG46htk8FJQvijzV+AVHzMkYH+ewfop5tRsM=,iv:lW2wkIU/f5IQgRHVM+2zlmAFEW76Dtu0Fh7mYgQxb+o=,tag:TqQb5TIqk1MsI7V/tiyznw==,type:str]
+  pgp: []
+  encrypted_regex: ^(id|secret|password|extraEnv|encryption_key|data|stringData|host|db)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$
+  version: 3.9.1
