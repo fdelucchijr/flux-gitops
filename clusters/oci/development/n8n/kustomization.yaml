@@ -4,6 +4,8 @@ resources:
   - release.yaml
   - repository.yaml
 namespace: flux-system
+configurations:
+  - kustomizeconfig.yaml
 secretGenerator:
   - name: n8n-values
     files:

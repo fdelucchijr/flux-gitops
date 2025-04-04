@@ -3,6 +3,8 @@ kind: Kustomization
 resources:
   - release.yaml
 namespace: flux-system
+configurations:
+  - kustomizeconfig.yaml
 secretGenerator:
   - name: kavita-values
     files:

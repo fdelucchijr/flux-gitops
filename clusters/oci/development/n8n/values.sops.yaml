@@ -3,14 +3,14 @@
 main:
   config:
     n8n:
-      encryption_key: ENC[AES256_GCM,data:AEx/rlu+43mc73eLxAnyzt+h/HhHrhQLT2BQsJN6IvgdqLXz,iv:pvyqDCSRBUBuN+8XSdH08/St/5PuxXFJ5vchi0prYcI=,tag:H/Cf4x5VACp+ovOMSD6wKQ==,type:str]
+      encryption_key: ENC[AES256_GCM,data:EPwbfPaawSZBIz1F9PtHgLLSHFUBGNY0NtRs00OSE5SuvVpk,iv:Jl/11ja3gFcE76zSP8eBaF/y4q0Pcl80mlhmHcPjvPU=,tag:3UiDNVJkdUkzSxNTYohF3g==,type:str]
     db:
-      type: ENC[AES256_GCM,data:iR8nOgUcouxERg==,iv:7yKc0jGENSC4F8yOBgsX/OC8pQ0S9V0zs+rS2SDEe1M=,tag:IAXa4ZYj4GArXDUri9Y8Pg==,type:str]
+      type: ENC[AES256_GCM,data:mDa3Mb9Ynoc29A==,iv:Ew/Vpl0ckX60wIgdiCjT0Ba+mRcEuUAj3uW/iOEn3jc=,tag:0hhMD4Y9LoOfbZS3vIrDBA==,type:str]
       postgresdb:
-        database: ENC[AES256_GCM,data:HCbV,iv:seMfs+Ws24zMMiiIAgk/g7Rr52Rq4WmIHLadu0gq8fw=,tag:aNHM3kd1TIrndGyaWk7vaQ==,type:str]
-        host: ENC[AES256_GCM,data:fe/Jcn9+w8y+QqUkgm0xSLk1CBqo7U8dJp1k3jWD48u58s/UzTiqjMQRqlglLF/j,iv:MB12wd+5AEh1nErjroP2b3FzNGrwHCJ7DxJsxErCUQA=,tag:jVZywS2hgLhqU31gner7MQ==,type:str]
-        port: ENC[AES256_GCM,data:t7N1sw==,iv:37+K1NrrLauABOWYmZicEzMKcOSR8m7W41NhAEppSfM=,tag:bbd1ZKZPCFqHr2VjKZWVaQ==,type:int]
-        user: ENC[AES256_GCM,data:s0By,iv:6dB9f3UHE+HBQDX3tVGoUykfP7WBaYQTMTOtFo+qgtw=,tag:pVhRKqJcpG2ry3VXx0ujKg==,type:str]
+        database: ENC[AES256_GCM,data:hjOm,iv:qpyou8iVTh7u5JvJPqROl4kw+rcArzv/Xde2q9mMGhQ=,tag:Nj+oceaq2PMv3ntBHE78tg==,type:str]
+        host: ENC[AES256_GCM,data:8XgU3jgNZ1z4ZWJnypM5kqnfMusIOE9MhordOVoIGPnV6YTkG7WW5C2yqEAaV35T,iv:8tnrdZ3eh35hefmIjfzjLQUCYfrl52iR1cinPU1Ey9M=,tag:cx7eNV28cZaD6FTz5S7yMA==,type:str]
+        port: ENC[AES256_GCM,data:Akw1sw==,iv:DgPHOOAoojiEeEv+sXc+2ognPjOvMrWMjdZ3hzRlhVc=,tag:iTiPw3W5AtxV2pBeOKU3IQ==,type:int]
+        user: ENC[AES256_GCM,data:/uke,iv:wYOTyH0+biOcVgxbJ6sSe3LK27QAMXpbaW0Akaf0YF0=,tag:beeZn1iWe4fOeCwDORHCCQ==,type:str]
     # credentials:
     #   overwrite:
     #     data:        # Overwrites for credentials - default: "{}"
@@ -30,7 +30,7 @@ main:
       function_allow_builtin: "*"
     generic:
       timezone: America/Lima
-    host: ENC[AES256_GCM,data:QWLFZMQcNdKqO8EqYj8nDQ==,iv:/oEhZoJxJ8aR/jR1vGTKOukcRzIEnaq8+hcsmbYOSFE=,tag:GoPKzc6XOGGlTzwvmx7ygA==,type:str]
+    host: ENC[AES256_GCM,data:ZaVr9vmRJz7p8GzW+An3GA==,iv:h4vVay+wcOklAQawe18wuVJ1pUj/uPyCQmwL8pzp7Jg=,tag:QDkN/ufzKEqMsNsKM4Kuhg==,type:str]
     # security:
     # excludeEndpoints: # Additional endpoints to exclude auth checks. Multiple endpoints can be separated by colon - default: ''
     # basicAuth:
@@ -58,15 +58,18 @@ main:
   secret:
     db:
       postgresdb:
-        password: ENC[AES256_GCM,data:4c3nvrgPLEQP5sYw,iv:I7uSKr0Q8VANIjzJP/1CbMsvfQXqImlPX1Uhaxp+Sxw=,tag:QaSXjvpC8OG/WxVyzt0Lpw==,type:str]
+        password: ENC[AES256_GCM,data:HnNK3kINM8c9edV7,iv:Pe9h/PqosNm0c8skalwap6lTETABU/HAZsTpFi6qqDI=,tag:3/B5WazkHv545nclp8eSdw==,type:str]
+    #ENC[AES256_GCM,data:Hl8OuiiIfSaWcQ==,iv:gziy5rOdhmavIWkkyJqprQaFN+jWk8ohMKrbrmN57TQ=,tag:F3IIl/d4m1bScu6ivduz2A==,type:comment]
+    #ENC[AES256_GCM,data:il4CbXJWvqfoCcWYxQ==,iv:ha3ZJeBIX3fRHZnVM1rPna7v7OoY3V6E5ob46Gt2rrw=,tag:o25XPMFMAG88K2dt/68ysA==,type:comment]
+    #ENC[AES256_GCM,data:lUob9hxQz/yKucGvx14tyNwICQeSvrXR,iv:DXWrZcRKxIDl6Lr3Ig1epkNGA00fiIYzqZMWLI5faVY=,tag:CAsNl9iBolgV9hYihWPlEA==,type:comment]
 # ---------------------------------------------------------------------------- #
 #                          Kubernetes Specific Section                         #
 # ---------------------------------------------------------------------------- #
 extraEnv:
-  WEBHOOK_TUNNEL_URL: ENC[AES256_GCM,data:ARCS4fLXRQ9No+SmhbNpJMqkkP5f1com9g==,iv:/02k4I0E8aizLL4OxdGs9+te1FnFN77SdL1fsAu1BuU=,tag:RQlOEgKcILrJsvLn2HKOrQ==,type:str]
-  N8N_EDITOR_BASE_URL: ENC[AES256_GCM,data:eEmjt1h1uwAk94wEjHhkvBJLIzDZCq2CsQ==,iv:I83M4kF/oSMlDBt4bPmyM0b9RmnYNfzqcQcbeJjToW0=,tag:Ms+h8tU36+wGI77DZ43XXA==,type:str]
-  N8N_HOST: ENC[AES256_GCM,data:182YfbUJXq3IhabcUwYG7w==,iv:ew1qWtq50O7vqFVhaQxAXyTxRisevE5qSHAZzAtlxDg=,tag:G3ar2uZfjilPZhJ3wKAoKg==,type:str]
-  N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: ENC[AES256_GCM,data:AUpCOA==,iv:7b51R5W1124qf6/H0RmzbqFytGOQsPa/o3PXPWvC8E8=,tag:SQhDBABh6hcpWciAU7V6vQ==,type:bool]
+  WEBHOOK_TUNNEL_URL: ENC[AES256_GCM,data:95SPjc1l80p+2DSCXo91CmTZc7DtZoZ8Gg==,iv:FmluREhtiJkyR2pDoEI/b6esAIyB1yPmHh0cnQIOGVg=,tag:vZy0nwxfhK3KXC/fENMNdw==,type:str]
+  N8N_EDITOR_BASE_URL: ENC[AES256_GCM,data:X0F8vpV5BFVcpmOdTxai6PqOYKsxEH29gA==,iv:5YkFruH4m8abFxmKJ2CYySDB+L7JTaFeYy8Hy1HvJC8=,tag:GVfs2JjZS5Dzre48Z1bQKQ==,type:str]
+  N8N_HOST: ENC[AES256_GCM,data:VgUpoX2VX4UNFz7IIX5w2w==,iv:cq5HRbuGJHWBp+3zygh0ATP7iauT9E0kcDlDFnKEvLk=,tag:eXJiZvREF1CaliDyrJVYOQ==,type:str]
+  N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: ENC[AES256_GCM,data:3I6yqg==,iv:1ztuOCOG0OIPZRzRV0PJT5VTwjVhsWeLttJZd0cx0VE=,tag:0Ei4/9iV34ZcjQiMXWCZ4A==,type:bool]
 # Set this if running behind a reverse proxy and the external port is different from the port n8n runs on
 persistence:
   enabled: true
@@ -89,30 +92,30 @@ service:
 ingress:
   enabled: true
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: ENC[AES256_GCM,data:f8IgTJ23QQHa3ThmPvoMZA==,iv:H4fuvb6z8w2gsxy1B5PU7oPvo1vUqfqmXUrpKH0ekz8=,tag:FNvXqjKBLTwSkn7ygZ5HMg==,type:str]
-    external-dns.alpha.kubernetes.io/cloudflare-proxied: ENC[AES256_GCM,data:GG0ThKk=,iv:k2vy1bcHebPb7irXDjoD6iC879tmGZOIMH9t9QlQOvE=,tag:nl8AsunXxGHmIcqGXKrGqA==,type:str]
-    kubernetes.io/ingress.class: ENC[AES256_GCM,data:GcP337QnZw==,iv:fHmvkleQCnvcOyj8tx9DO0XHDC6tkJi171GdsYVZv4I=,tag:0rM5+c46iFAzcQaK/ITN8Q==,type:str]
+    external-dns.alpha.kubernetes.io/hostname: ENC[AES256_GCM,data:UWmcO/ie32A6YTF2Thexeg==,iv:BvwdGabUYzbObnKwumlPbExWXtA90iWswNqlqeWyi74=,tag:Xq3Yt+DprCTAqYIwMJ9+nA==,type:str]
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: ENC[AES256_GCM,data:30/Z8+8=,iv:tapYmiIBm+jF3m6nK1v2+jle12QRvPFuvND0IdBrZH4=,tag:mTGbcmG+It1ZnV49mrKGXg==,type:str]
+    kubernetes.io/ingress.class: ENC[AES256_GCM,data:T3/83i2MIQ==,iv:0j+0h6wZfU65orUVlSPF1TIf5zoEbI7C+Ykdqbz3bCw=,tag:Rn1z3gDY9X5iL7+XU9IHNQ==,type:str]
   hosts:
-    - host: ENC[AES256_GCM,data:27aPkxG1FQN+EwiwcYnVOw==,iv:7tS+NFOUWU0sbXKr8zwy5F83CJEPEe63sUA4N1JIDQ0=,tag:2uxV5WS+5ffDdCOPhxEcHA==,type:str]
+    - host: ENC[AES256_GCM,data:bMeigT8SjzsAY6qa7DZxNg==,iv:m/FVFo9pujF0+zVd8YVR9LixJ2tVAF8EZj1SLFMAY2U=,tag:749JTK+HcrjFcNbDORUCbA==,type:str]
       paths:
-        - ENC[AES256_GCM,data:xA==,iv:uCAckdH05yGizBAkadR4MmUgot2XqiMSELWe1kRmKz4=,tag:dJR/7sqb/F+b9qd/07WfDg==,type:str]
+        - ENC[AES256_GCM,data:RA==,iv:OJyIsHfIKtvbQXRkYQiI5inv5ZMnx8djjI/2RO7LTVE=,tag:/VjOF44N0UAjXxeu2huvnw==,type:str]
 sops:
-kms: []
-gcp_kms: []
-azure_kv: []
-hc_vault: []
-age:
-  - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
-    enc: |
-      -----BEGIN AGE ENCRYPTED FILE-----
-      YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBCaEZFZXViME5zeTNKSXp5
-      SFFHVTlBdTF3MTIwUDNYU1RBUXJINTRQclJNCmhaRVdwUjR0YVErTHhxRG9TSVU3
-      d1NUZmwzV2puVHRUYTdIcWpUcDVEczQKLS0tIFZTUlh6OEJjNlJjWjRFL3JXMi9Q
-      ekhUK0p3WHArcEQwYlM2cGE1dHIvUTAKmcPlNpnqTIYGWLH7BGFM3oV9+5SIkp/c
-      a7mSbUBBXK0sRbPkUbM8DlrL383F/SJcWQ5fpqlYXa9Cl9FooZ8VUQ==
-      -----END AGE ENCRYPTED FILE-----
-lastmodified: "2025-04-04T01:11:44Z"
-mac: ENC[AES256_GCM,data:aNYuP+F5S3Xi1E1lDPLGVZ7NjMuBZx4aLsi/1KGgmmA1Ujdk94zQHP7xnt9okqwWi1Y4WIgAjKJlZ99Fb8E5XafLUb/I5GpJ8xiTwdx+kaTMT0ChEZFJl2VH5/a7MqzhvazJnzhfHNUoz7lg1ngN/gxHDS9D/W5LpDBS5mLEGpo=,iv:qyzqmKgn7VQpQRR0TwOVQRAO8wDhPAaf8DFDxG8lMU0=,tag:okYmuz4ZLMWQC8eUgguevg==,type:str]
-pgp: []
-encrypted_regex: ^(id|secret|password|extraEnv|encryption_key|data|stringData|host|db)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$
-version: 3.9.1
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBMZGtoMDVKQ3V6YUZHeFQv
+        L1Z0OGlhR1d3UVpMKzZ6UmExanRlRnpMbDMwCkJPSmJrcFlhdGFwc3NUeXRxcVNa
+        M2pPMlJkbE1YUk4rUVF2azFJQy9xaWsKLS0tIDBBc2FrVXVLSzkxMzVYSDBnRWlN
+        SHBXTkZkMjU2VERFRUJnc3lrZVNUcncKpS+MXx+CxV5+UnjM2DGST3NuIKZYpMZu
+        BHsHF2E83PZrrsG/8ryITlLxrMht5bDP3Ua9uqxA11IXZZvKXz1vVw==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2025-04-04T07:06:58Z"
+  mac: ENC[AES256_GCM,data:EOu9Fiu3pIdKo6nB+CVncrId3Nq/8EM56MXtgOWadv+4j3CWyXUSWspuRREYIXsZzyskzInm0JadYNfQTIxxV4fbuf8KDDEujAtSSCdlbovrmzm2W5Tvb8i34VdSbhQdsfrzSyYmWnqbtwx7C8CAZtwQyxHhp6clWu5ARt/tYBs=,iv:zOtsRZYptNvmOuDa8sjWrr/N6FbaX5Eq0XOhP5NROpM=,tag:rLcDwegHOojzg07K4XswwQ==,type:str]
+  pgp: []
+  encrypted_regex: ^(id|secret|password|extraEnv|encryption_key|data|stringData|host|db)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$
+  version: 3.9.1
