@@ -1,6 +1,6 @@
 creation_rules:
   - path_regex: values.sops.yaml
-    encrypted_regex: "^(id|secret|password|extraEnv|env|encryption_key|data|stringData|host|db|influxdb_v2|wildcardHost|clientId|clientSecret)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$"
+    encrypted_regex: "^(id|secret|password|extraEnv|env|encryption_key|data|stringData|host|db|influxdb_v2|dendrite_config|wildcardHost|clientId|clientSecret)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$"
     age: >-
       age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
   # - path_regex: ingress.sops.yaml

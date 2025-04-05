@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: dendrite
+  namespace: productivity-stack
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: dendrite
+      version: 0.13.4
+      sourceRef:
+        kind: HelmRepository
+        name: matrix-org-repo
+        namespace: productivity-stack
+  valuesFrom:
+    - kind: Secret
+      name: dendrite-values

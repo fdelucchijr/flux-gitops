@@ -1,0 +1,102 @@
+image:
+    repository: ccarney16/pterodactyl-panel
+    tag: v1.11.2
+    pullPolicy: IfNotPresent
+revisionHistoryLimit: 2
+strategy:
+    type: Recreate
+service:
+    main:
+        ports:
+            http:
+                port: 80
+probes:
+    liveness:
+        enabled: false
+    readiness:
+        enabled: false
+    startup:
+        enabled: false
+ingress:
+    main:
+        enabled: true
+        annotations:
+            external-dns.alpha.kubernetes.io/cloudflare-proxied: ENC[AES256_GCM,data:AFHVrg==,iv:RI5TVAgQ6hvvY4KkexwKyBrJtZWGqbsb1fuBL1uDD+c=,tag:K0eILUE+1VFYdsCdaoR7AA==,type:str]
+            external-dns.alpha.kubernetes.io/enabled: ENC[AES256_GCM,data:0PZS5g==,iv:Wu25vsi8c3GjKxFBl8K1e0pKBeC7mNLw9LiWEvgfkAA=,tag:/CL7IlPqFoMxnYMt0jdEhQ==,type:str]
+            kubernetes.io/ingress.class: ENC[AES256_GCM,data:704NTUSxvw==,iv:Kkn9Z+acv4gzCeYep/iEQKF3CrhR1v+FDkao66MEf/A=,tag:k1enrze23Rsw3k2YQ0C9TA==,type:str]
+        hosts:
+            - host: ENC[AES256_GCM,data:fl7W1ELiYSQteHxFSzeFwrZmcSJajS81,iv:xv/5ldyA3YdwXUWkm5HTRp11RDysuckAIMx+Wj37ERw=,tag:noOzTZScM/vmY9NO92Y8Pw==,type:str]
+              paths:
+                - path: ENC[AES256_GCM,data:aw==,iv:5TKFqQt8tEE0ErfxW4zXWSY96oEPJZV04S/DCB2nEBs=,tag:P+I58sCrvqJBxf+fC0EtaA==,type:str]
+                  pathType: ENC[AES256_GCM,data:WoWHU0vo,iv:L10d5sWhZr8vRttDIcqnXOLlU0bbW2MFDl6YjOYwsPk=,tag:lp9qljPiFdF8J7dCwoCk7g==,type:str]
+env:
+    APP_URL: ENC[AES256_GCM,data:nVtC5iWzt3OzdEzF9o+zqJohX/p5iuk61SvUYxSbtec=,iv:AGuT55lTEM7IeEiR8zughrs5Nwu+JV7JxOTriRt5V+U=,tag:AxUAFW4z9JE9mSo6+gA4Zw==,type:str]
+    APP_TIMEZONE: ENC[AES256_GCM,data:AE2MOPypDZnonEkm,iv:zlwVqR2EnJsmL0XEVOGSxDc9ck13v1gZ/eiek/lvKMQ=,tag:iNIkD5qMiPJfsTbUnDDblg==,type:str]
+    APP_SERVICE_AUTHOR: ENC[AES256_GCM,data:gzCNduvo36S38nQEakm8reLtHr2k,iv:blL7ZcPFX4fSTKbGEvwMMXOhuao5i4A/vyBZ0077QJE=,tag:ZAMyc1u2eSV9/pGI+7NO8g==,type:str]
+    MAIL_FROM: ENC[AES256_GCM,data:1V9Gs5xcjL1+6ipB8YqtAaA+QGSYUg==,iv:GurJHJ0Mxu2bll/JA76jMCt78Tr1PgBRjvrwEJKeRJI=,tag:/W3omLxCUIUY5JXpYJMn1w==,type:str]
+    MAIL_DRIVER: ENC[AES256_GCM,data:w8NsYQ==,iv:dwh2TAG9yfMviF/BL6D0nOUG2t6Y+dh6/8YrTevdXFw=,tag:DZTtKgFT2awoJCao4h95mg==,type:str]
+    MAIL_HOST: ENC[AES256_GCM,data:Uw8PovGEm59xBk0ratc=,iv:miS5QQ0lxUaodBJz5Eff+L8ovChqJ6gzTMlLidsjS9g=,tag:Tf8NXp5JDCK7l0o2ZjtBXA==,type:str]
+    MAIL_PORT: ENC[AES256_GCM,data:BBOA,iv:d9PkwfozIViB00MvAoGtTEuNSPbQvLBpICiCMFK5clU=,tag:WXerVWQq+ll16486bz2CTA==,type:str]
+    MAIL_USERNAME: ENC[AES256_GCM,data:NDEslav0UXrrDZ8=,iv:vDn7qmmeyqP66qGo+/3tgkA9lZrWrxMfbFHwMzkj+Qc=,tag:8YXPwCTRYWygYOJ3QsC8Ww==,type:str]
+    MAIL_PASSWORD: ENC[AES256_GCM,data:wIB9lwAALiwq/pSLoSYzbw==,iv:/SygbbDYDoNsAis1E1TBOiRLcmpHM+ksqib9fIjOH5o=,tag:2J0Taw6mozqnIUFBVVJztA==,type:str]
+    MAIL_ENCRYPTION: ENC[AES256_GCM,data:L/ri,iv:MnX7PVgDpStTmQGFolmN6/rqGvGPBFWLoKO/acNCc1E=,tag:ML3jtOehWDvkf/GrWvJUyg==,type:str]
+    APP_KEY: ENC[AES256_GCM,data:PVBHbaIprHJs1xbom60axVkXl4joYwR4b2HQBCC1XHGdSHIPT/t+fZm2BCocZGHUZS3a,iv:GOtB+sgjNPA6LKHPYRaZI34wqAKG5xR2b5u7wVqSN5A=,tag:+7sf5rXGFypN8mBBG89OcA==,type:str]
+    APP_ENV: ENC[AES256_GCM,data:9XEPtYKbrKjHMg==,iv:gyzPOEQx81MaTKllDwF2Hfa7aEgsGKE71jw2s2gnOZg=,tag:lFcEGxGhizXDH8KJ0ErC1w==,type:str]
+    APP_ENVIRONMENT_ONLY: ENC[AES256_GCM,data:2E10Wnc=,iv:SNBMzrgf4Q5YBLUHBNkqkMB7Dq829GQlafAkA5Nb+w4=,tag:/3b6+SN0r2JJV25CqZqBpg==,type:str]
+    CACHE_DRIVER: ENC[AES256_GCM,data:JdYI6qo=,iv:Xsqql6pQsnumF1MBqN2asj4m36ja3BX/jaLaHWZ7kN0=,tag:NJo/4RsmYiiEamn4CUtwOA==,type:str]
+    SESSION_DRIVER: ENC[AES256_GCM,data:pJUkL/M=,iv:xYxt/j4xchC1LFE/+xU4dARObqwNS9jn5Dcg3dj2nG0=,tag:NKH1zLZ7HarIBjnEDPRZjQ==,type:str]
+    QUEUE_DRIVER: ENC[AES256_GCM,data:5zT97y8=,iv:L7Q7sl4mJASC5n+jZ4oOHW2BrCv68t+zCwrZESt9Mt0=,tag:NFcdgfHenNutsWJPiZ4tgw==,type:str]
+    REDIS_HOST: ENC[AES256_GCM,data:Xs6dFYJmtqP7glcv8/QzkxncLT/TynLFg1HQBXh9wR9uT9m/aWb+RlKuFCB0EKR9cEFaNEv0T4sBGyQDzlWGjKbs/A==,iv:O+DeFBG17yS6GKMvlUtOHJau9AOWWmGTo8xNkRgIPyY=,tag:lllL0u0a04S6DlNiHuicjw==,type:str]
+    DB_PASSWORD: ENC[AES256_GCM,data:bCPemOSsSyTQiN6PO+Psag==,iv:yf2teT8BC5OaIcQyR3TOAL/aAXmvwls7iM3KcAKKlhM=,tag:jKh8UidFyGQK4VuomAoefQ==,type:str]
+    DB_HOST: ENC[AES256_GCM,data:PmafhBehKfzwR4jfl+D2q9apbzJM5iUvSwWPdkL6HRalDiSTXlJldV+Ch/NHFWQwFq3RAao=,iv:AW4LC7Sy/KHT01cznQG9csM2RNPAVZ/D3nBGcCbk5Nc=,tag:BmlQYjJd3ih1j2XpKO0HUw==,type:str]
+    TRUSTED_PROXIES: ENC[AES256_GCM,data:Gw==,iv:vj+dc/8weQLbG3PxG/AiCIBDa+vN4izt4UyMXyBrVws=,tag:BLnq2EOf8vgWVAuhc5gZIA==,type:str]
+    #ENC[AES256_GCM,data:g49NrooHdtkdtKEebUu4fHdk0gkB6WKTVrCZpEfAu7YHh4VcDew=,iv:F+1GaoC8y4cS+OepBFoB3It+WLxs22yHOzuYQUTpbSI=,tag:TeonFydiw0IOVDYWfdk++A==,type:comment]
+    APP_BACKUP_DRIVER: ENC[AES256_GCM,data:dKM=,iv:RrjuIPbT9aoX2Ng+LbQL5ucagp/NBiiBDL/8fNUsqOk=,tag:tWYw7Z4qjseVhSf9Qx3mgA==,type:str]
+    #ENC[AES256_GCM,data:hscIwWfBG7EXZi7ypGk9H50Yg+IkVbGz,iv:nDM1lBZ9uQmtUUV+sF+PiYqdzZIxGYDNoF7jWOToGY4=,tag:7JroSth/cGX54NG9pxjeAQ==,type:comment]
+    AWS_DEFAULT_REGION: ENC[AES256_GCM,data:N9a9QtWhS9VuuDkd,iv:Bur6M+3lsB+AbV1AatkI7LCe4J8NbE7GGuNqRALbk0A=,tag:wv/Wc7tY5rt+7jStW8KVLg==,type:str]
+    AWS_ACCESS_KEY_ID: ENC[AES256_GCM,data:LF4GZ/HhJDKoNXvJrQt9wQzCHvEcwk9fHzCQTj/HA+OEKnRvThzWIw==,iv:dsEAgG5KPBLSZIpbcz9s/7lAzzj8BS6N8JAjq3GfHu8=,tag:HKMenhCGDN6vKuT121+yhA==,type:str]
+    AWS_SECRET_ACCESS_KEY: ENC[AES256_GCM,data:CKFbpAhVq7GUJcKLjtHnsHuYygtFXLX3VqfFcgA7xGPcuDgi1RkTPRXSDjs=,iv:ci7b5WT2WdduBOpasLOdvpKV5024BqhMzgGCrOc1yOA=,tag:uxepbbmj4QdsARzxwpvn4A==,type:str]
+    AWS_BACKUPS_BUCKET: ENC[AES256_GCM,data:MYcfyiUUQOvnElfMhixb6Dq0hg==,iv:lctVAKRDhjd6aRSzA7E60caUI7adz/a4gMUtJ/vJoWs=,tag:vHaa1+Y59U3wlYP1SWUUHw==,type:str]
+    AWS_ENDPOINT: ENC[AES256_GCM,data:wPViMCWgVISShWGyremFL0zyKW4QcpZZyl0UwT504To6JnIdQ0BfkW9vg30KXGeDiYtYaoLotWKWuLokmGlHHLCBA9HfWA==,iv:dMjFAFpa7dg+huac6GxCuGPw48tnrPuFx9aDvRsdofU=,tag:T0mfrALIc2nrqaGjK2JhOg==,type:str]
+    AWS_USE_PATH_STYLE_ENDPOINT: ENC[AES256_GCM,data:5DvDfQ==,iv:cPXKYG2118iCO+Nfk8ITakCEP90e7Q7CQUYHJJzhQ04=,tag:qvfws8DdrHphtUE/05yaaQ==,type:str]
+    #ENC[AES256_GCM,data:FCVUVVluzLH+kAxNpgc5mZZFSVJhQUm7MxKz29XiGjopYPY=,iv:lK/GxbBdb+MwfkH5sDevq8nGO+77f97LFDKWjry7qt0=,tag:waWQGEj5cCFsZIelCM5IXg==,type:comment]
+    #ENC[AES256_GCM,data:3DavGhNzscl+DOGF/pIVR9jvPx+WAiOp3zTKyQeUlXU/aTEITA==,iv:binuADYQO4fAQViSm64Jvu7zZ/BK+fTFq+iySVIXr6k=,tag:TlIuJ7KsG6TwvumMd2oILw==,type:comment]
+persistence:
+    data:
+        enabled: ENC[AES256_GCM,data:XtUFMw==,iv:GF9p3EwE0vSK4tQgdGlcJbJgcLkEQSbdSZ0LOSsTEgw=,tag:envql9hLVBRTXLWFMabXkw==,type:bool]
+        mountPath: ENC[AES256_GCM,data:B6eLlqU=,iv:JOXg2dsI4stB7iQK7gUklvcDSgxdTI0Q/59bXAIQwNc=,tag:kiBYuJBoJChp1IX/cB8w6A==,type:str]
+        size: ENC[AES256_GCM,data:HHgliw==,iv:kihFlJLGWNNBso9IUHz5WPYpEg4KiMLGeeruzev40yY=,tag:bFrWVj2GBh/BIzZ4eRSNtQ==,type:str]
+        type: ENC[AES256_GCM,data:r7/E,iv:d5GJGmOE3QeygVgk5X2aBGxkyJMSitnZGevPgjm/WKk=,tag:6qt/Jo+e0gWr0tF1z/R1pQ==,type:str]
+        storageClass: ENC[AES256_GCM,data:jievy5stXsHKiQ==,iv:WXIyumXWQLdt2EfW5OGiw4LXv2ITsO6d7ZhDsBqIboo=,tag:MQZOXUAlq/TWDqHA3EuB0g==,type:str]
+        accessMode: ENC[AES256_GCM,data:3UUJp8dnJA5bNvVy/g==,iv:I6pRFCnPPind2Fyy2CBFJtW+Fz9LHNm3fXB2hH4aeuY=,tag:7jeUi3XBQbwyVrLYRQljfA==,type:str]
+    logs:
+        enabled: true
+        type: emptyDir
+        mountPath: /app/storage/logs
+    nginx:
+        enabled: true
+        size: 4Mi
+        type: pvc
+        storageClass: nfs-client
+        accessMode: ReadWriteOnce
+        mountPath: /etc/nginx/conf.d/
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAwaTQvY25RUmE4SWdrTGU2
+            OFVuZlBpOURqQUQ2blJZQ00yZzhQa3FaclNZCkFCTmRUYndnUzFWdHpaWndZNmR3
+            cjMraXVnOGtqakhKbGJKZE1UbllCRW8KLS0tIDB2NTM3OEZwTzNDam4vNE5ETHFH
+            bFZjYlZsRE9Dd2ZoYjdsUU9CSmYwREUK/1hNfxEyZBO+wZryz50u5CQf9ch1rMDL
+            LLVr2KdzmcQmQPL/LOkaCN+ATH+KL39iWwaanDfMN30y8dVg1u/uyA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-04-05T08:03:48Z"
+    mac: ENC[AES256_GCM,data:uuaK5Kns7wRU3iWPcxG0Lrk1LE6nbo47fH1liPLP81MYkD6jAH2GIrNhmw5NsDxk7e7PKCtengAgouxgcfx5vPSjs0jztFM/R04fRDCqXWzn0p4pztbPr4ea6+X4Uqq9Y2dZDelYlQ7oxZ1+PWfN4WlDlzCgdl3W3MjqL36rbBg=,iv:CFySRSSEEMOl5dZe8GqIfvGeTtk2AStn75fbEbK5IPE=,tag:GbVUDhohkVtH9wE733BPUA==,type:str]
+    pgp: []
+    encrypted_regex: ^(id|secret|password|extraEnv|env|encryption_key|data|stringData|host|db|influxdb_v2|wildcardHost|clientId|clientSecret)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$
+    version: 3.9.1
