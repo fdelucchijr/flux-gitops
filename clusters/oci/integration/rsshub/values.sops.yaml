@@ -1,44 +1,74 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s/helm-charts/app-template-3.2.0/charts/other/app-template/values.schema.json
-image:
-  repository: ghcr.io/fdelucchijr/rsshub
-  tag: latest
-  pullPolicy: IfNotPresent
-
-revisionHistoryLimit: 1
-strategy:
-  type: Recreate
-
+controllers:
+    main:
+        strategy: Recreate
+        revisionHistoryLimit: 1
+        containers:
+            main:
+                image:
+                    repository: ghcr.io/fdelucchijr/rsshub
+                    tag: latest
+                    pullPolicy: IfNotPresent
+                probes:
+                    liveness:
+                        enabled: false
+                    readiness:
+                        enabled: false
+                    startup:
+                        enabled: false
+                env:
+                    - name: ENC[AES256_GCM,data:qEzbjsmu2ZhSOyKxXheIaQ3QKVg=,iv:ncUgwB8fYn92sm35cx2lpdoqfTvUNwtfz2Nv0m13ed8=,tag:1yB/AXUNOjvxOGEGr6achw==,type:str]
+                      value: ENC[AES256_GCM,data:hRM2jSCmoW5MN5oqqq9+Fxvy++onwUahuw==,iv:/W7aHnZI38tAtcmHNXAx6EHKJB2CQ1DsuoIVjOHOu/s=,tag:ETG39p5afMDm/K7wtFmYUg==,type:str]
+                    - name: ENC[AES256_GCM,data:+o1uZil+wt9voMYdreL/fd3O070/gLk=,iv:X4m7fe7r/cybRkLdRQRMT/HV64LW3CRZ8MpJNDWUq5Q=,tag:7AKpv0VFp8WvZxsPlvKa1A==,type:str]
+                      value: ENC[AES256_GCM,data:sSIhb8dSqELq/WpWSpw7WkXSNq3xN2AgQV6TJzDZ78wzOfhcWpZCsFq5bj6ywbqC+hI=,iv:rP7pFlb9vZjXKFNfVsTp1Epm/KG5AufH0NP9AD01gwU=,tag:6WZ4GGXw6uoX7+tDzE9ZEA==,type:str]
+                    - name: ENC[AES256_GCM,data:BegAlJ1AudaKmauIuK1umjWx7iQ=,iv:IIBHq+gXhciUHqt1Vr8Myb0FcoZTRYpOi4byy48QrXk=,tag:t6tIp4xZMVy+VVQBAqlYJQ==,type:str]
+                      value: ENC[AES256_GCM,data:NIwhCfdVN5agN0anQuFtkauRwtBNQlo3TueNyveS9XST0qPwhRT0I6FdcSrSwdD9vQbQRwsfRzsyOgODkOB8E3mfr4b4Jtc1BPa+vsE/be+pBasTrEs1O0STHSYPzdi+uKIsP2XQXuTEkKGOHJZkbgQ4BVXU6uR+xdK0k4zddKM9C54n/8tXDc/PMDyu6zLGzRIZTdjA6GDgw38V9+jhOdkhT4wF9rPB3Ur+FRY=,iv:mQosj6Q3LocOdgutTxy3JNK+J0TpjNc6KGRwaw8eqGw=,tag:bOn28TspmR5dcnlmElj3QA==,type:str]
+                    - name: ENC[AES256_GCM,data:LCNzV/EUfzipKw==,iv:F/n2MaxRhyxI5ei115zUc/2zd3Y2bmKzu0fg1MTS6Ww=,tag:ORJhavN+rkJZJanjs2f35g==,type:str]
+                      value: ENC[AES256_GCM,data:gCCn4EA=,iv:jvzrPfKEGbY8xuSDaLIk2pabZm1xQhehg9FHkuoktbY=,tag:wFaGy/k54MYP6td3nYLbKA==,type:str]
+                    - name: ENC[AES256_GCM,data:b8G+9rXwYI0=,iv:XIdwdG3DeBT0UzRA5HHw0uN2OUfqj4fU/mBmaZrYJlw=,tag:lyxBPOLyrdNX/p/f2fza3g==,type:str]
+                      value: ENC[AES256_GCM,data:Gk+NRwcfPQA/dQ==,iv:utKqc0LbQxsEfAY70RvPIlbECx7oRArWD20kyAilCK0=,tag:+i0+d2XZVVHH2EkO9GmOSw==,type:str]
+                    - name: ENC[AES256_GCM,data:I3nzQ2/M/XeJZ4ucgZxkCo+GtaCNHI/9W9M6,iv:Q6SG1hNJljLUb4FjgC0HjFZJQZuPTZp0NBXUVlCsbYU=,tag:nmXG/yKBhOetutM0YJsgnA==,type:str]
+                      value: ENC[AES256_GCM,data:jKn5eg==,iv:pPsZbLAPGGeXmvq+6A/vaRqe6bzt15FphPnbfwtoPSQ=,tag:01f2L95emGi1cFzkr0X0CA==,type:str]
+                    - name: ENC[AES256_GCM,data:OhiVB/20hmeT,iv:Qh4NWy+L3s89jWjWZDFtXwWhdjx8LziM6597QLPoMqc=,tag:YtoKwxmDuVQ1Ol5M+f4ErA==,type:str]
+                      value: ENC[AES256_GCM,data:H3UIKpaZeTykeu9ktvPNEJ6VERL+zWWmu1T7NXwy4T2M4oo5bAs2CYIF+O0fPGkJnpWAUBkEOAEJROCpCQUi8msIN79lLiAwRMkK/w==,iv:BeiqVuZlaBDxvTibLcE3rwZoGVbUHs38/c36B5muahs=,tag:8dxRkHLmgpjQG3/wy0PZdA==,type:str]
 service:
-  main:
-    ports:
-      http:
-        port: 1200
-
-probes:
-  liveness:
-    enabled: false
-  readiness:
-    enabled: false
-  startup:
-    enabled: false
-
+    main:
+        controller: main
+        ports:
+            http:
+                port: 1200
 ingress:
-  main:
-    enabled: false
-    annotations:
-      external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
-      external-dns.alpha.kubernetes.io/enabled: "false"
-      kubernetes.io/ingress.class: traefik
-    hosts:
-      - host: "rsh.homenets.xyz"
-        paths:
-          - path: /
-            pathType: Prefix
-env:
-  TWITTER_CONSUMER_KEY: 6LbCh1Rc02GedRbsBBojZNW8a
-  TWITTER_CONSUMER_SECRET: aHEV5rcPpN9WT80NYsXWe0pFkff5iEIXYzp6ruBLtuelz65XuN
-  TWITTER_TOKEN_RSSHub: 6LbCh1Rc02GedRbsBBojZNW8a,aHEV5rcPpN9WT80NYsXWe0pFkff5iEIXYzp6ruBLtuelz65XuN,2820172257-wJ1h5rgXKWPf3JAQOIwssH6mt1b0og92uALokgr,cBLKTfHtvNhahqSOM3zW9Cx5umfxrGENqkw1sn75A3aX0
-  CACHE_TYPE: redis
-  NODE_ENV: production
-  ALLOW_USER_HOTLINK_TEMPLATE: "true"
-  REDIS_URL: redis://rsshub-redis-master.{{ .Release.Namespace }}.svc.cluster.local:6379/
+    main:
+        enabled: false
+        annotations:
+            external-dns.alpha.kubernetes.io/cloudflare-proxied: ENC[AES256_GCM,data:pxh9Zg==,iv:ZrFAiuQVEN/h3Astm3JMqY6aD/yEyX36xeu3EysZc38=,tag:M0OoRo+KzTeES9PUenHGWA==,type:str]
+            external-dns.alpha.kubernetes.io/enabled: ENC[AES256_GCM,data:G1VcUZc=,iv:bkEHgQGkhWIB9ZQxfgueG3+J0pqfQYhizl3YuIsFQig=,tag:wOaOejXdLP3ePeChtkX8tw==,type:str]
+            kubernetes.io/ingress.class: ENC[AES256_GCM,data:nR0wkAAPOg==,iv:ZcP9hRQ31xuSZJGPnPaTeLEgB4L+7c7mP/62Gx7Tao4=,tag:AlDgXCka+jJ7Vz+HPJMu8A==,type:str]
+        hosts:
+            - host: ENC[AES256_GCM,data:H29ymZTghBiK7JmJwBTsDQ==,iv:1D+bhFdlBDUxGFthdCGlMmXhpb6tyWRsN23TmwQXh6I=,tag:RKGjaUCf75CxLFYFteSaSA==,type:str]
+              paths:
+                - path: ENC[AES256_GCM,data:9Q==,iv:dYWimNEeuR+Y/ydCgdXALsp00WtXXR/4VEPlU6V/u84=,tag:SvdjwRA8Y1brqeZYdiugVw==,type:str]
+                  pathType: ENC[AES256_GCM,data:SaZzAuWJ,iv:EsNugjyEMOHqO884BXHCwfwj3HDTPBw9/dysyHl5OoI=,tag:AKT3M4TovcfeA8/h8Wshhw==,type:str]
+                  service:
+                    identifier: ENC[AES256_GCM,data:7hzSDA==,iv:4JqCu+25AIDksnZ4ZPpqoJM5VMSIG0+WnMcgJhINVI4=,tag:BkwLQNPGDs432fmSa/3XsQ==,type:str]
+                    port: ENC[AES256_GCM,data:eSv6iw==,iv:oJWC3Ji07xQG0k5DPNCPfJmbkxrudotosy55UDz3K/0=,tag:MFGHoKWwMQE4GGKD02t3zA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB3NGV2bXhITGx3bWU2V1JW
+            cHdYS0dMeVNxdWJ4WG1mbncybjlFL1J2aUhJCmRBcjJFZHFXLzNiUWpDTEYrT1N6
+            SStqVVdGUGduUkk1MzM5VTkzSUFyaEEKLS0tIEdnMUVIU3B2Q2M2dkN0L001amRR
+            ZGhmcm5SbTlUYVFoSUxMWGkxVDRaTGcKcnH/KNPG6+9uLkKfetux5GrtXAK3W3np
+            LjtUp/xTcgUqv6192KPw+oDV0q2h0kr+fsaPTOeyZNNXrMpHaZPO4A==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-04-05T12:00:47Z"
+    mac: ENC[AES256_GCM,data:KS19ILvcld26j8FKufOJXU+I5OeKdVpb1HWqLcAr8JnFAe+U0JGUFDFAmtXUsvM6sdP+QwgqXlVzDC//aVui+zleXmTQH0Dy2EO0tWvmGyusDIM6Y9gxlF0WIW2zOfl0i73K2ATOxk4s4RJ5V1XO+aW0/AGbWMQAktgxSVUZHx0=,iv:b+GjpQ5VEDDOeL9rX09wbhtfHJF7bzIzc+OY5D9/aqA=,tag:U3dnvl9Vf/+bdrwiwUfBcg==,type:str]
+    pgp: []
+    encrypted_regex: ^(id|secret|password|extraEnv|env|encryption_key|data|stringData|host|db|influxdb_v2|dendrite_config|wildcardHost|clientId|clientSecret)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$
+    version: 3.9.1
