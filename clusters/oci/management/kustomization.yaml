@@ -8,6 +8,7 @@ resources:
   - ./tailscale/connections/sr-to-internet.yaml
   - ./telegraf/repository.yaml
   - ./telegraf/release.yaml
+  - ./kubernetes-metrics-server/release.yaml
 namespace: management-stack
 configurations:
   - kustomizeconfig.yaml
