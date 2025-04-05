@@ -1,6 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - ./coder/release.yaml
+  - ./coder/repository.yaml
   - ./n8n/release.yaml
   - ./n8n/repository.yaml
   - ./directus/release.yaml
@@ -8,6 +10,9 @@ namespace: development
 configurations:
   - kustomizeconfig.yaml
 secretGenerator:
+  - name: coder-values
+    files:
+      - values.yaml=./coder/values.sops.yaml
   - name: n8n-values
     files:
       - values.yaml=./n8n/values.sops.yaml

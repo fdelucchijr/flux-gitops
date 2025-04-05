@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: coder
+  namespace: productivity-stack
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: coder
+      version: 2.2.0
+      sourceRef:
+        kind: HelmRepository
+        name: coder-repo
+        namespace: development
+  valuesFrom:
+    - kind: Secret
+      name: coder-values

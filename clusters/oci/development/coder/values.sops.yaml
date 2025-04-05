@@ -1,0 +1,80 @@
+coder:
+    image:
+        repo: ghcr.io/coder/coder
+        # tag: "v0.17.1"
+    annotations: {}
+    serviceAccount:
+        workspacePerms: true
+        enableDeployments: true
+        annotations: {}
+        name: coder
+    env:
+        - name: ENC[AES256_GCM,data:2MFEx5ieAdQoD5/jrkQlQN+QIUfhgWE=,iv:NnHx0AKxOLDlES6RNKbdgFaw+cz95kl11AXreyD7LW8=,tag:TRlzcfUQ1dmAg0dddH7qzQ==,type:str]
+          value: ENC[AES256_GCM,data:CK/hdA==,iv:/DJS6aNt81WOCCoRB8eVSpoW2zgsvAmCXYl6Wtkc5f8=,tag:5rel1MBePWfqwlE/YSGCWg==,type:str]
+        - name: ENC[AES256_GCM,data:nwjxDsKPniZBQ5p5uuwXNg==,iv:1O2KfxpoU7ROTS69qJ19Kak7/yKLC0D85AdQyRvbmWA=,tag:kcfGpaZJsUbQgjtDtnHW1g==,type:str]
+          value: ENC[AES256_GCM,data:ZuDgA3w9wT4XWSvIdL+gg/fbIlrlPjKIOM4=,iv:LU4hiw24jKBPJoEk9K+/M+G/XfWOzP4WfgvqMQ4YU0Y=,tag:zI64My2u8Yy1GMSl+WP3bQ==,type:str]
+        - name: ENC[AES256_GCM,data:m/oJ0gHMZBFU1I9FTdVE5f8/,iv:4BvIxaWH1OflXGnmkT+Goie7GbKarkJrf8Jf6mMYDog=,tag:Bv6NNqU+i9eCHsC/iulpnA==,type:str]
+          value: ENC[AES256_GCM,data:q78nsfXzgC3E09k9qVQ=,iv:1v58PRhElAAiLW1cnI7fAJ5u/ckPEVfJ4xpC89jbq/I=,tag:iPKiLgEVNTbwqP32Yr3Weg==,type:str]
+        - name: ENC[AES256_GCM,data:cyMaEyNSBM52udpJMRvdyhBUibU=,iv:Enf7NaEr3XTOKsLCggEMzBPCREecVlv2qDyaHz8Ah3c=,tag:pBl2CQWNLvBfQLR+vV1D2Q==,type:str]
+          value: ENC[AES256_GCM,data:CmTfabtk,iv:x8fhSabMIA3FoFB6I0GZ6OXBkROwRrR/IOSQKYGnYOg=,tag:z3pe6coWewGwxDRNZR0Txg==,type:str]
+        - name: ENC[AES256_GCM,data:dLbCS9WYgjRD22YwXdQAGRFHee3JHvxbCA==,iv:CnZ8aC6LcdD8dYosKY1f74QgyUP3ytXWWDIIp0tFLBE=,tag:EGhr7roqOUgRXzt5tst8mQ==,type:str]
+          value: ENC[AES256_GCM,data:gS0UvVa0U90uD5gobIs2wQdaXuM=,iv:K/Hm0j+zXOudBkYuL0gpBuWGzhZe6u1PeG/4PjJ3SLc=,tag:vxg+f0GKmUtcACjBNIAxGw==,type:str]
+        - name: ENC[AES256_GCM,data:tIQq1kVxXAqdZGUblceJJikMe3Hs2vi75Z4WmYw=,iv:wTngEyff7AssdJbfRmplPwSLZDvr2+42qWpGZ5xaYWs=,tag:S1ZpR8Qfb83sSIkRGya1cA==,type:str]
+          value: ENC[AES256_GCM,data:2TSMjHdQiJ+wweVysuXrVu5DKJqGrXOhs8GT9UXthlsH3OCBtrX/Yg==,iv:eQ6CLb2lau81VP9oZyIC1HkhAZJyx9+goszk5Mqr2qY=,tag:ThQSbK0raFK5TnYGGNx2hw==,type:str]
+          #ENC[AES256_GCM,data:zevhVo4AGjXJu0xbCoIX3HvTcN525RmOVvRC+O1fIsvvoDV5,iv:Ie6ONnjXzKiVCYN5D1Jv5k+07eFHwYGoqgb3P/wJjuI=,tag:hBAaNdjv7I/HyqEb5vLJuw==,type:comment]
+          #ENC[AES256_GCM,data:C5++f/7dixXyrMwu3fqDL2k5yzAFVA==,iv:Y3TlcDwHbHdRvd9vJtfQQ/zbmEPhTLNqb3G+HjlGfz0=,tag:2auEBm0TCIidPWy5uJGeWQ==,type:comment]
+        - name: ENC[AES256_GCM,data:q40xIz7bFHoYaXsZQvwUfMqMZML38BU=,iv:dxMuqzmvBTmSE1zVWbK1j//nIf2mcZTI2P7x0DVbXo4=,tag:SCv48pPL10+EWbuJRveDTQ==,type:str]
+          value: ENC[AES256_GCM,data:8ad7yLgn0ruZaER2igLuAvkcxg2GQgnWb2DtzI/rusiPfYmbALi0D0V6ht/uTHBmBWaAWtwhTo5zu3R+Kl8PRDnQdikRHh6Z4o+LphSPMWdghuypiAlYbeFxdySTlF46Kh/yNnnQEA7j+kCr5cHE0SDe,iv:1zeN5iiRMXX6hHt7pSCuJBNvCeG842anGB600r2SJug=,tag:He/KGxIUkAGaUD78qCllLg==,type:str]
+    affinity:
+        podAntiAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+                - podAffinityTerm:
+                    labelSelector:
+                        matchExpressions:
+                            - key: app.coder.com
+                              operator: In
+                              values:
+                                - "true"
+                    topologyKey: kubernetes.io/hostname
+                  weight: 1
+    service:
+        enable: true
+        type: ClusterIP
+        sessionAffinity: None
+        externalTrafficPolicy: ClusterIP
+    ingress:
+        enable: true
+        host: ENC[AES256_GCM,data:m1I+r4jZyi2cxH7wy7e7Oi1P,iv:/fXo4xNtXbDtgydtFNzLDH8Pv/5LBPyq8LZGIbSHTg0=,tag:YD7XQDwOkllTrbxQrj6z4w==,type:str]
+        wildcardHost: ENC[AES256_GCM,data:Sgay8Ur7KGKOmWn3gfSBteCbIY4=,iv:cP1K7WoqxS3WQKP6wIRFwgozZcwpPW3n+iim9pxCJ9I=,tag:tn35C53dKa3UA9MDSHwqiQ==,type:str]
+        annotations:
+            external-dns.alpha.kubernetes.io/cloudflare-proxied: ENC[AES256_GCM,data:wRqTIBY=,iv:hu6jYqE32tg59mOoR+3Qvrk8vituEIDeXbhZg0IRMEM=,tag:XGQuTMaMXFcJXhSvPnd3zQ==,type:str]
+            external-dns.alpha.kubernetes.io/enabled: ENC[AES256_GCM,data:G5srUQ==,iv:3IaUwp+bG/oT2NTyJf1EAGzV+1o6IRavVzP7Jj2B55o=,tag:u/zjzJ/7Zew/bZwHVr6Z3g==,type:str]
+            kubernetes.io/ingress.class: ENC[AES256_GCM,data:+7E0E96TKQ==,iv:UYZKNOduZj5A8bmBN2qrXN6wUwnDFLOVehnHUoyv6ok=,tag:+hNC4doYOGsk6cHS4Beg/Q==,type:str]
+    securityContext:
+        runAsNonRoot: false
+        runAsUser: 1000
+        runAsGroup: 1000
+        readOnlyRootFilesystem: false
+        # seccompProfile:
+        #   type: RuntimeDefault
+        allowPrivilegeEscalation: true
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB1d0tIZzVXMlQxNEFKZWhQ
+            VjFIV1VTSkVocjV6dUtXTEtlN0hMODFJRnprCjVOWnBOTGZkY0dqT2ZlY3FWNzE5
+            ZWVkTURzL3UxdHM0VGQreUtTNHVLMG8KLS0tIDljbStkKzBTMzNUL09YQlRWWFBJ
+            LzBMWlFkN0hEVzIwRVgrN3FmZmViYlUKNrg7HaIORwRgjB7uI0k2BSssKLt+LMu5
+            +zfUoBdq+F8/b/AIzs8jWsZ/5BhiuOKdLK5C8Z+8VDzlbxYxPSGBeg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-04-05T07:09:42Z"
+    mac: ENC[AES256_GCM,data:z18fLQkG28cfXIO4BTIyD7zM+c2KMNjDa+I8rR0oJsATlVWbw32usBVVbJnBS6EvqylRwkaSzyq9QP27NWaioe8RJBItQyv+5Nt7JC/p5mSpqGv0PbPjpf1rDcEvn3BPRoeWM33oP69rsHtSzSDcupp+Y1b+8Udn0j9BaNugXSA=,iv:BS7WIj+5dGkPuCzahIHexRUJG1FhYalDAFFQ9lHznMQ=,tag:02xLrx4Og/y2BBGr8HrwhA==,type:str]
+    pgp: []
+    encrypted_regex: ^(id|secret|password|extraEnv|env|encryption_key|data|stringData|host|db|influxdb_v2|wildcardHost|clientId|clientSecret)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$
+    version: 3.9.1
