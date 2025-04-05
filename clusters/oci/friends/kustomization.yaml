@@ -1,17 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ./dendrite/release.yaml
-  - ./dendrite/repository.yaml
   - ./pterodactyl/release.yaml
   - ./pterodactyl/redis/release.yaml
 namespace: friends-stack
 configurations:
   - kustomizeconfig.yaml
 secretGenerator:
-  - name: dendrite-values
-    files:
-      - values.yaml=./dendrite/values.sops.yaml
   - name: pterodactyl-values
     files:
       - values.yaml=./pterodactyl/values.sops.yaml
