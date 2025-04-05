@@ -4,5 +4,5 @@ metadata:
   name: coder-repo
   namespace: productivity-stack
 spec:
-  interval: 1m
+  interval: 24h
   url: "https://helm.coder.com/v2"

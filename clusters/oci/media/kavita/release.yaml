@@ -4,7 +4,7 @@ metadata:
   name: kavita
   namespace: media-stack
 spec:
-  interval: 1m
+  interval: 1h
   chart:
     spec:
       chart: app-template

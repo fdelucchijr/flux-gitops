@@ -4,7 +4,7 @@ metadata:
   name: n8n-release
   namespace: development
 spec:
-  interval: 5m
+  interval: 1h
   chart:
     spec:
       chart: n8n
