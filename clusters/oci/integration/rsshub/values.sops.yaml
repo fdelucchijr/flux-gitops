@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s/helm-charts/app-template-3.2.0/charts/other/app-template/values.schema.json
+image:
+  repository: ghcr.io/fdelucchijr/rsshub
+  tag: latest
+  pullPolicy: IfNotPresent
+
+revisionHistoryLimit: 1
+strategy:
+  type: Recreate
+
+service:
+  main:
+    ports:
+      http:
+        port: 1200
+
+probes:
+  liveness:
+    enabled: false
+  readiness:
+    enabled: false
+  startup:
+    enabled: false
+
+ingress:
+  main:
+    enabled: false
+    annotations:
+      external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+      external-dns.alpha.kubernetes.io/enabled: "false"
+      kubernetes.io/ingress.class: traefik
+    hosts:
+      - host: "rsh.homenets.xyz"
+        paths:
+          - path: /
+            pathType: Prefix
+env:
+  TWITTER_CONSUMER_KEY: 6LbCh1Rc02GedRbsBBojZNW8a
+  TWITTER_CONSUMER_SECRET: aHEV5rcPpN9WT80NYsXWe0pFkff5iEIXYzp6ruBLtuelz65XuN
+  TWITTER_TOKEN_RSSHub: 6LbCh1Rc02GedRbsBBojZNW8a,aHEV5rcPpN9WT80NYsXWe0pFkff5iEIXYzp6ruBLtuelz65XuN,2820172257-wJ1h5rgXKWPf3JAQOIwssH6mt1b0og92uALokgr,cBLKTfHtvNhahqSOM3zW9Cx5umfxrGENqkw1sn75A3aX0
+  CACHE_TYPE: redis
+  NODE_ENV: production
+  ALLOW_USER_HOTLINK_TEMPLATE: "true"
+  REDIS_URL: redis://rsshub-redis-master.{{ .Release.Namespace }}.svc.cluster.local:6379/

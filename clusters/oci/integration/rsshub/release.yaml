@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: rsshub
+  namespace: integration-stack
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: app-template
+      version: 3.7.3
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-app-template-repo
+        namespace: flux-system
+  valuesFrom:
+    - kind: Secret
+      name: rsshub-values

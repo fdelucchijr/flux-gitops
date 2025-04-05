@@ -1,0 +1,17 @@
+architecture: standalone
+image:
+  registry: ghcr.io
+  repository: zcube/bitnami-compat/redis
+  tag: 6.2
+auth:
+  enabled: false
+master:
+  persistence:
+    enabled: true
+    storageClass: "nfs-client"
+    accessModes:
+      - ReadWriteOnce
+    size: 100Mi
+  service:
+    annotations:
+      app: rsshub-redis
