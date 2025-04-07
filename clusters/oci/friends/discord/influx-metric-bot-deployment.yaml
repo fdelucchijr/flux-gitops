@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: discord-influx-metrics-bot
+spec:
+  selector:
+    matchLabels:
+      app: discord-influx-metrics-bot
+  template:
+    metadata:
+      labels:
+        app: discord-influx-metrics-bot
+    spec:
+      containers:
+        - name: discord-influx-metrics-bot
+          image: ghcr.io/fdelucchijr/discord-influx-metrics-bot:latest
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          envFrom:
+            - secretRef:
+                name: discord-influx-secret

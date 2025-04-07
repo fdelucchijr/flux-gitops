@@ -3,6 +3,8 @@ kind: Kustomization
 resources:
   - ./pterodactyl/release.yaml
   - ./pterodactyl/redis/release.yaml
+  - ./discord/secret.sops.yaml
+  - ./discord/influx-metric-bot-deployment.yaml
 namespace: friends-stack
 configurations:
   - kustomizeconfig.yaml
