@@ -1,2 +1,3 @@
+**/*.decrypted*
 **/**/.sopsrc
 *.agekey
