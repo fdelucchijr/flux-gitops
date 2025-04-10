@@ -10,6 +10,11 @@
       "(?:^|/).*repository\\.ya?ml$"
     ]
   },
+  "kubernetes": {
+    "fileMatch": [
+      "(^|/).*deployment\\.ya?ml$"
+    ]
+  },
   "helm-values": {
     "commitMessageTopic": "helm values {{depName}}",
     "fileMatch": [
