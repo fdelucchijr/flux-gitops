@@ -2,5 +2,20 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
-  ]
+  ],
+  "flux": {
+    "fileMatch": [
+      "(?:^|/)gotk-components\\.ya?ml$",
+      "(?:^|/)release\\.ya?ml$",
+      "(?:^|/).*repository\\.ya?ml$"
+    ]
+  },
+  "helm-values": {
+    "commitMessageTopic": "helm values {{depName}}",
+    "fileMatch": [
+      "(^|/)values\\.ya?ml$",
+      "(^|/)values\\.sops\\.ya?ml$"
+    ],
+    "pinDigests": false
+  }
 }

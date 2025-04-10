@@ -1,58 +1,58 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s/helm-charts/app-template-3.2.0/charts/other/app-template/values.schema.json
 controllers:
-  main:
-    strategy: Recreate
-    containers:
-      main:
-        image:
-          repository: directus/directus
-          tag: 11
-        env:
-          - name: ENC[AES256_GCM,data:u7oH/VRIbOHfKg==,iv:3Gzieso0xEb9SiIfHt35MJwYmA48N7gRMVymZt8A4EA=,tag:Ou6GBuc0bpkClwOF+2+8cQ==,type:str]
-            value: ENC[AES256_GCM,data:gSH+6nH0BpDMh2n6Hs48tIoMe0JtrxU=,iv:rfUG6WGmWO64xCIO5cOBLJCFAk2rSWQTEnDHfe6YJMg=,tag:z8ykar/eCPgXlepCc/85fA==,type:str]
+    main:
+        strategy: Recreate
+        containers:
+            main:
+                image:
+                    repository: directus/directus
+                    tag: 10
+                env:
+                    - name: ENC[AES256_GCM,data:u7oH/VRIbOHfKg==,iv:3Gzieso0xEb9SiIfHt35MJwYmA48N7gRMVymZt8A4EA=,tag:Ou6GBuc0bpkClwOF+2+8cQ==,type:str]
+                      value: ENC[AES256_GCM,data:gSH+6nH0BpDMh2n6Hs48tIoMe0JtrxU=,iv:rfUG6WGmWO64xCIO5cOBLJCFAk2rSWQTEnDHfe6YJMg=,tag:z8ykar/eCPgXlepCc/85fA==,type:str]
 service:
-  main:
-    controller: main
-    ports:
-      http:
-        port: 80
-        targetPort: 8055
+    main:
+        controller: main
+        ports:
+            http:
+                port: 80
+                targetPort: 8055
 ingress:
-  main:
-    enabled: true
-    annotations:
-      external-dns.alpha.kubernetes.io/hostname: ENC[AES256_GCM,data:sZ2OeO8u55KcOkNUyzAN,iv:QxrvHFkf+dxu38cWx7SCdBrVkiAVrDxxRECDcT1HpXA=,tag:lmD3OuCk9P/4TXLABh5CgQ==,type:str]
-      external-dns.alpha.kubernetes.io/cloudflare-proxied: ENC[AES256_GCM,data:CQDav68=,iv:SCqe+A8NmjT+bwaQ9t7Ojd9KRWYFIAzYDVUbaNbe2MA=,tag:CDPDthSZkQhPMMkzYQaIOg==,type:str]
-      kubernetes.io/ingress.class: ENC[AES256_GCM,data:H7kFeer7Fw==,iv:i5KtNCT3q2hXhDEwxP+DnVjan+B0kjsYsipFL7zj6cA=,tag:7uiNNNpQo6R4Vou7wZ4dag==,type:str]
-    hosts:
-      - host: ENC[AES256_GCM,data:D2ogCRb/lJGjrrsjLvba,iv:q/mslq86Bb3id11fEZ7f+7Pv9dN0qWxmJQWM4Bt3TSM=,tag:ZuSLqvQdzYINNX5q6JCzFg==,type:str]
-        paths:
-          - path: ENC[AES256_GCM,data:QA==,iv:fJDB6bqAtoKbWcQDJ95OtkstgKzMQ6MgTp65nTgIUgQ=,tag:4/5T1/f0G5yEXcKm8jlaeA==,type:str]
-            pathType: ENC[AES256_GCM,data:raX2uJEM0I4gSaHlk02Vyjpx4qOKog==,iv:SyyxT+8WAtYYyB8Z8kvXu8nQs3JF73mqL06Dq+3JW7w=,tag:/fxjC0aZAsrRX6lN2DAIgQ==,type:str]
-            service:
-              identifier: ENC[AES256_GCM,data:M4EVDQ==,iv:0UEGKORuzyAvhuXODKEEFIPjk4M2PDcq07HruhiMqHQ=,tag:Vniz1wBFHk2ai1YtopyfvQ==,type:str]
-              port: ENC[AES256_GCM,data:pY2Nuw==,iv:WMUSwtvaY2glf0oVf1iWCYAl2o7U0OEGu9X5DG9VyhQ=,tag:JOvLiusT8QX6KjHa9wv/UQ==,type:str]
+    main:
+        enabled: true
+        annotations:
+            external-dns.alpha.kubernetes.io/hostname: ENC[AES256_GCM,data:sZ2OeO8u55KcOkNUyzAN,iv:QxrvHFkf+dxu38cWx7SCdBrVkiAVrDxxRECDcT1HpXA=,tag:lmD3OuCk9P/4TXLABh5CgQ==,type:str]
+            external-dns.alpha.kubernetes.io/cloudflare-proxied: ENC[AES256_GCM,data:CQDav68=,iv:SCqe+A8NmjT+bwaQ9t7Ojd9KRWYFIAzYDVUbaNbe2MA=,tag:CDPDthSZkQhPMMkzYQaIOg==,type:str]
+            kubernetes.io/ingress.class: ENC[AES256_GCM,data:H7kFeer7Fw==,iv:i5KtNCT3q2hXhDEwxP+DnVjan+B0kjsYsipFL7zj6cA=,tag:7uiNNNpQo6R4Vou7wZ4dag==,type:str]
+        hosts:
+            - host: ENC[AES256_GCM,data:D2ogCRb/lJGjrrsjLvba,iv:q/mslq86Bb3id11fEZ7f+7Pv9dN0qWxmJQWM4Bt3TSM=,tag:ZuSLqvQdzYINNX5q6JCzFg==,type:str]
+              paths:
+                - path: ENC[AES256_GCM,data:QA==,iv:fJDB6bqAtoKbWcQDJ95OtkstgKzMQ6MgTp65nTgIUgQ=,tag:4/5T1/f0G5yEXcKm8jlaeA==,type:str]
+                  pathType: ENC[AES256_GCM,data:raX2uJEM0I4gSaHlk02Vyjpx4qOKog==,iv:SyyxT+8WAtYYyB8Z8kvXu8nQs3JF73mqL06Dq+3JW7w=,tag:/fxjC0aZAsrRX6lN2DAIgQ==,type:str]
+                  service:
+                    identifier: ENC[AES256_GCM,data:M4EVDQ==,iv:0UEGKORuzyAvhuXODKEEFIPjk4M2PDcq07HruhiMqHQ=,tag:Vniz1wBFHk2ai1YtopyfvQ==,type:str]
+                    port: ENC[AES256_GCM,data:pY2Nuw==,iv:WMUSwtvaY2glf0oVf1iWCYAl2o7U0OEGu9X5DG9VyhQ=,tag:JOvLiusT8QX6KjHa9wv/UQ==,type:str]
 persistence:
-  tmp:
-    enabled: true
-    type: emptyDir
+    tmp:
+        enabled: true
+        type: emptyDir
 sops:
-  kms: []
-  gcp_kms: []
-  azure_kv: []
-  hc_vault: []
-  age:
-    - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
-      enc: |
-        -----BEGIN AGE ENCRYPTED FILE-----
-        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBIdXVBUmMzaDhCSEJaMkpR
-        S05IUllscnVYc1htRkJYRjluL0FjbnZYQ200CjZ3MXlQMUhzSEFLMFg2aFhQZmQ5
-        blNLSG8yUlVWY3ZqVmlPZndSYm5yclEKLS0tIHVlWitHdlVSZVl5bDNZdnc0T1VY
-        ZlIrT0FYN1h2L1hWaGFTVjNaOFBZSkkKG/+Xl9MvmeVP2XDrwi16/b9T3rWmY2Wf
-        A1FCf9GqpJkaCMXY7plnHWVCEnZ4IVmPuiNk5Tv43Wpvyj8x3sgCzw==
-        -----END AGE ENCRYPTED FILE-----
-  lastmodified: "2025-04-04T07:59:48Z"
-  mac: ENC[AES256_GCM,data:L+Q2Uj2DBcz4tjK7+MoZjT60tmszJSEUFq1eyTF1Gj4Az/I7sJQLysgzvJcDg/8qd5/2OlUSC1nvOAAW62s/gH4PpT+46zM18wzJBubeckdek1ExiB0n0R49nn9AnKlzB7XzaGU8RY1JOIrajZx9GwyzG+x8mTCgpqozoLXVjiA=,iv:U0uoPLQP5o6AOdxFjN9xgSx4VRNmWuI/a9v6yPA2qk0=,tag:pNYS+JDUp1HFFXNQijYetw==,type:str]
-  pgp: []
-  encrypted_regex: ^(id|secret|password|extraEnv|env|encryption_key|data|stringData|host|db)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$
-  version: 3.9.1
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBIdXVBUmMzaDhCSEJaMkpR
+            S05IUllscnVYc1htRkJYRjluL0FjbnZYQ200CjZ3MXlQMUhzSEFLMFg2aFhQZmQ5
+            blNLSG8yUlVWY3ZqVmlPZndSYm5yclEKLS0tIHVlWitHdlVSZVl5bDNZdnc0T1VY
+            ZlIrT0FYN1h2L1hWaGFTVjNaOFBZSkkKG/+Xl9MvmeVP2XDrwi16/b9T3rWmY2Wf
+            A1FCf9GqpJkaCMXY7plnHWVCEnZ4IVmPuiNk5Tv43Wpvyj8x3sgCzw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-04-10T16:25:33Z"
+    mac: ENC[AES256_GCM,data:VMF3KzynQoE3uYrdghd7yeiR3KWDbYguSNiUXbDmlMfal2eny8UFMnWryLpAYl5gylvyasS4p/vC0JKs0np8VVUS80TznfxN2pGkNx7QTHPXTZ4sUqEBWkV+MlQ/TbO0L1IHygBhYYnXZQYBhZ5S8RpQi/TU4ITOwVND2YUwOEc=,iv:4JywuL5CPMT/V1n/4eHTEQSMdbEovvjagT+F0btoPFs=,tag:UKdUIti351UvvW5Xvg/Xlw==,type:str]
+    pgp: []
+    encrypted_regex: ^(id|secret|password|extraEnv|env|encryption_key|data|stringData|host|db)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$
+    version: 3.9.1
