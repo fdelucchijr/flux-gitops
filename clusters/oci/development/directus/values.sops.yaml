@@ -6,7 +6,7 @@ controllers:
             main:
                 image:
                     repository: directus/directus
-                    tag: 10
+                    tag: 11
                 env:
                     - name: ENC[AES256_GCM,data:u7oH/VRIbOHfKg==,iv:3Gzieso0xEb9SiIfHt35MJwYmA48N7gRMVymZt8A4EA=,tag:Ou6GBuc0bpkClwOF+2+8cQ==,type:str]
                       value: ENC[AES256_GCM,data:gSH+6nH0BpDMh2n6Hs48tIoMe0JtrxU=,iv:rfUG6WGmWO64xCIO5cOBLJCFAk2rSWQTEnDHfe6YJMg=,tag:z8ykar/eCPgXlepCc/85fA==,type:str]
