@@ -1,121 +1,127 @@
 # Default helm values for n8n.
 # Default values within the n8n application can be found under https://github.com/n8n-io/n8n/blob/master/packages/cli/config/index.ts
 main:
-  config:
-    n8n:
-      encryption_key: ENC[AES256_GCM,data:EPwbfPaawSZBIz1F9PtHgLLSHFUBGNY0NtRs00OSE5SuvVpk,iv:Jl/11ja3gFcE76zSP8eBaF/y4q0Pcl80mlhmHcPjvPU=,tag:3UiDNVJkdUkzSxNTYohF3g==,type:str]
-    db:
-      type: ENC[AES256_GCM,data:mDa3Mb9Ynoc29A==,iv:Ew/Vpl0ckX60wIgdiCjT0Ba+mRcEuUAj3uW/iOEn3jc=,tag:0hhMD4Y9LoOfbZS3vIrDBA==,type:str]
-      postgresdb:
-        database: ENC[AES256_GCM,data:hjOm,iv:qpyou8iVTh7u5JvJPqROl4kw+rcArzv/Xde2q9mMGhQ=,tag:Nj+oceaq2PMv3ntBHE78tg==,type:str]
-        host: ENC[AES256_GCM,data:8XgU3jgNZ1z4ZWJnypM5kqnfMusIOE9MhordOVoIGPnV6YTkG7WW5C2yqEAaV35T,iv:8tnrdZ3eh35hefmIjfzjLQUCYfrl52iR1cinPU1Ey9M=,tag:cx7eNV28cZaD6FTz5S7yMA==,type:str]
-        port: ENC[AES256_GCM,data:Akw1sw==,iv:DgPHOOAoojiEeEv+sXc+2ognPjOvMrWMjdZ3hzRlhVc=,tag:iTiPw3W5AtxV2pBeOKU3IQ==,type:int]
-        user: ENC[AES256_GCM,data:/uke,iv:wYOTyH0+biOcVgxbJ6sSe3LK27QAMXpbaW0Akaf0YF0=,tag:beeZn1iWe4fOeCwDORHCCQ==,type:str]
-    # credentials:
-    #   overwrite:
-    #     data:        # Overwrites for credentials - default: "{}"
-    #     endpoint:    # Fetch credentials from API - default: ''
-    # executions:
-    #   process:              # In what process workflows should be executed - possible values [main, own] - default: own
-    #   timeout:              # Max run time (seconds) before stopping the workflow execution - default: -1
-    #   maxTimeout:           # Max execution time (seconds) that can be set for a workflow individually - default: 3600
-    #   saveDataOnError:      # What workflow execution data to save on error - possible values [all , none] - default: all
-    #   saveDataOnSuccess:    # What workflow execution data to save on success - possible values [all , none] - default: all
-    #   saveDataManualExecutions:    # Save data of executions when started manually via editor - default: false
-    #   pruneData:            # Delete data of past executions on a rolling basis - default: false
-    #   pruneDataMaxAge:      # How old (hours) the execution data has to be to get deleted - default: 336
-    #   pruneDataTimeout:     # Timeout (seconds) after execution data has been pruned - default: 3600
-    node:
-      # ==> turns into ENV: NODE_FUNCTION_ALLOW_BUILTIN="*"
-      function_allow_builtin: "*"
-    generic:
-      timezone: America/Lima
-    host: ENC[AES256_GCM,data:ZaVr9vmRJz7p8GzW+An3GA==,iv:h4vVay+wcOklAQawe18wuVJ1pUj/uPyCQmwL8pzp7Jg=,tag:QDkN/ufzKEqMsNsKM4Kuhg==,type:str]
-    # security:
-    # excludeEndpoints: # Additional endpoints to exclude auth checks. Multiple endpoints can be separated by colon - default: ''
-    # basicAuth:
-    #   active: true
-    #   user: fdelucchijr
-    #   password: 'aaa'
-    #   hash: false
-    # jwtAuth:
-    #   active:               # If JWT auth should be activated for editor and REST-API - default: false
-    #   jwtHeader:            # The request header containing a signed JWT - default: ''
-    #   jwtHeaderValuePrefix: # The request header value prefix to strip (optional) default: ''
-    #   jwksUri:              # The URI to fetch JWK Set for JWT authentication - default: ''
-    #   jwtIssuer:            # JWT issuer to expect (optional) - default: ''
-    #   jwtNamespace:         # JWT namespace to expect (optional) -  default: ''
-    #   jwtAllowedTenantKey:  # JWT tenant key name to inspect within JWT namespace (optional) - default: ''
-    #   jwtAllowedTenant:     # JWT tenant to allow (optional) - default: ''
-    # endpoints:
-    #   rest:             # Path for rest endpoint  default: rest
-    #   webhook:          # Path for webhook endpoint  default: webhook
-    #   webhookTest:      # Path for test-webhook endpoint  default: webhook-test
-    # externalHookFiles:  # Files containing external hooks. Multiple files can be separated by colon - default: ''
-    # nodes:
-    #   exclude:          # Nodes not to load - default: "[]"
-    #   errorTriggerType: # Node Type to use as Error Trigger - default: n8n-nodes-base.errorTrigger
-  secret:
-    db:
-      postgresdb:
-        password: ENC[AES256_GCM,data:HnNK3kINM8c9edV7,iv:Pe9h/PqosNm0c8skalwap6lTETABU/HAZsTpFi6qqDI=,tag:3/B5WazkHv545nclp8eSdw==,type:str]
-    #ENC[AES256_GCM,data:Hl8OuiiIfSaWcQ==,iv:gziy5rOdhmavIWkkyJqprQaFN+jWk8ohMKrbrmN57TQ=,tag:F3IIl/d4m1bScu6ivduz2A==,type:comment]
-    #ENC[AES256_GCM,data:il4CbXJWvqfoCcWYxQ==,iv:ha3ZJeBIX3fRHZnVM1rPna7v7OoY3V6E5ob46Gt2rrw=,tag:o25XPMFMAG88K2dt/68ysA==,type:comment]
-    #ENC[AES256_GCM,data:lUob9hxQz/yKucGvx14tyNwICQeSvrXR,iv:DXWrZcRKxIDl6Lr3Ig1epkNGA00fiIYzqZMWLI5faVY=,tag:CAsNl9iBolgV9hYihWPlEA==,type:comment]
+    config:
+        n8n:
+            encryption_key: ENC[AES256_GCM,data:EPwbfPaawSZBIz1F9PtHgLLSHFUBGNY0NtRs00OSE5SuvVpk,iv:Jl/11ja3gFcE76zSP8eBaF/y4q0Pcl80mlhmHcPjvPU=,tag:3UiDNVJkdUkzSxNTYohF3g==,type:str]
+            host: ENC[AES256_GCM,data:mko9kPFQa8bBtW/cmO9kjg==,iv:DS1UC4gIxrEAMcurowOnKubg9/9VqhZSlL1nR/l4jhQ=,tag:yVXw/jOA7rwGW+jtUqEhag==,type:str]
+            port: 5678
+            protocol: https
+        db:
+            type: ENC[AES256_GCM,data:mDa3Mb9Ynoc29A==,iv:Ew/Vpl0ckX60wIgdiCjT0Ba+mRcEuUAj3uW/iOEn3jc=,tag:0hhMD4Y9LoOfbZS3vIrDBA==,type:str]
+            postgresdb:
+                database: ENC[AES256_GCM,data:hjOm,iv:qpyou8iVTh7u5JvJPqROl4kw+rcArzv/Xde2q9mMGhQ=,tag:Nj+oceaq2PMv3ntBHE78tg==,type:str]
+                host: ENC[AES256_GCM,data:8XgU3jgNZ1z4ZWJnypM5kqnfMusIOE9MhordOVoIGPnV6YTkG7WW5C2yqEAaV35T,iv:8tnrdZ3eh35hefmIjfzjLQUCYfrl52iR1cinPU1Ey9M=,tag:cx7eNV28cZaD6FTz5S7yMA==,type:str]
+                port: ENC[AES256_GCM,data:Akw1sw==,iv:DgPHOOAoojiEeEv+sXc+2ognPjOvMrWMjdZ3hzRlhVc=,tag:iTiPw3W5AtxV2pBeOKU3IQ==,type:int]
+                user: ENC[AES256_GCM,data:/uke,iv:wYOTyH0+biOcVgxbJ6sSe3LK27QAMXpbaW0Akaf0YF0=,tag:beeZn1iWe4fOeCwDORHCCQ==,type:str]
+        webhook:
+            url: https://n8n.homenets.xyz
+        # credentials:
+        #   overwrite:
+        #     data:        # Overwrites for credentials - default: "{}"
+        #     endpoint:    # Fetch credentials from API - default: ''
+        # executions:
+        #   process:              # In what process workflows should be executed - possible values [main, own] - default: own
+        #   timeout:              # Max run time (seconds) before stopping the workflow execution - default: -1
+        #   maxTimeout:           # Max execution time (seconds) that can be set for a workflow individually - default: 3600
+        #   saveDataOnError:      # What workflow execution data to save on error - possible values [all , none] - default: all
+        #   saveDataOnSuccess:    # What workflow execution data to save on success - possible values [all , none] - default: all
+        #   saveDataManualExecutions:    # Save data of executions when started manually via editor - default: false
+        #   pruneData:            # Delete data of past executions on a rolling basis - default: false
+        #   pruneDataMaxAge:      # How old (hours) the execution data has to be to get deleted - default: 336
+        #   pruneDataTimeout:     # Timeout (seconds) after execution data has been pruned - default: 3600
+        node:
+            # ==> turns into ENV: NODE_FUNCTION_ALLOW_BUILTIN="*"
+            node_env: production
+            function_allow_builtin: '*'
+        generic:
+            timezone: America/Lima
+        host: ENC[AES256_GCM,data:ZaVr9vmRJz7p8GzW+An3GA==,iv:h4vVay+wcOklAQawe18wuVJ1pUj/uPyCQmwL8pzp7Jg=,tag:QDkN/ufzKEqMsNsKM4Kuhg==,type:str]
+        # security:
+        # excludeEndpoints: # Additional endpoints to exclude auth checks. Multiple endpoints can be separated by colon - default: ''
+        # basicAuth:
+        #   active: true
+        #   user: fdelucchijr
+        #   password: 'aaa'
+        #   hash: false
+        # jwtAuth:
+        #   active:               # If JWT auth should be activated for editor and REST-API - default: false
+        #   jwtHeader:            # The request header containing a signed JWT - default: ''
+        #   jwtHeaderValuePrefix: # The request header value prefix to strip (optional) default: ''
+        #   jwksUri:              # The URI to fetch JWK Set for JWT authentication - default: ''
+        #   jwtIssuer:            # JWT issuer to expect (optional) - default: ''
+        #   jwtNamespace:         # JWT namespace to expect (optional) -  default: ''
+        #   jwtAllowedTenantKey:  # JWT tenant key name to inspect within JWT namespace (optional) - default: ''
+        #   jwtAllowedTenant:     # JWT tenant to allow (optional) - default: ''
+        # endpoints:
+        #   rest:             # Path for rest endpoint  default: rest
+        #   webhook:          # Path for webhook endpoint  default: webhook
+        #   webhookTest:      # Path for test-webhook endpoint  default: webhook-test
+        # externalHookFiles:  # Files containing external hooks. Multiple files can be separated by colon - default: ''
+        # nodes:
+        #   exclude:          # Nodes not to load - default: "[]"
+        #   errorTriggerType: # Node Type to use as Error Trigger - default: n8n-nodes-base.errorTrigger
+    secret:
+        db:
+            postgresdb:
+                password: ENC[AES256_GCM,data:HnNK3kINM8c9edV7,iv:Pe9h/PqosNm0c8skalwap6lTETABU/HAZsTpFi6qqDI=,tag:3/B5WazkHv545nclp8eSdw==,type:str]
+                #ENC[AES256_GCM,data:pjpURDJDVKUuW+gCV9PsfbrGG0eudYvJmGZ/sdg5us5fkftULIiBIcksp3ydrkOSEkB0nJdPz0y806kgJtXTZDSwBaVLjGEb1uGNj5hzp6OWJn8arTEHtTGNMEycz65Ks4TifkXtbeh2wweJQOsFJUaLHb7FavMQi7XUffmyNA==,iv:IjWuEjtozmLTnj65WoZdMcQ9Buo8tUJs9WG/iGc7dV0=,tag:FDAmldSA31Kzal1bReu6hg==,type:comment]
+                #ENC[AES256_GCM,data:omj1Hh9iRuI314YT8jAvTBMOtc1z3dfKdzgZ1Cdc0hThGkih2hQ1a9qgQeY0GrNwQgQcH6Buans8E+w7/UYw62DZZFQI4WMu7uxCxsr/8nnBIVuo4GPLbsLPKJ8dcIJRAVT6JgCuRLxF2Aet8N+LGJ+Ouhi2lXrm22/8qCPCmHO3kzA=,iv:zhWu7UNlXreOAdcuEhiSSsmpuiOlZUsptJNZlKAwBUo=,tag:1MBJ2uFAS2gmwg7q2p7bsg==,type:comment]
+                #ENC[AES256_GCM,data:5iUYW3wIAybZMggnUbHTY0Xl343Ufk9Z8GEBKJab7a0bqPuWtqKGfKWKKBPbFxWRYY0MTLNA+ollzAMJsF9MBS4XwKsJVGw2LoTgahe5nSJ499v7cqr14qy6RO+MZLq1kEaFQUj0SiIfr/IQBiAjViHrraJlfycPrfwxOkSMLpfDqm7dXgtaAagL02wJhP4=,iv:Rred9LNH4S4XpGb72MxiwS27PpIc7dzSZfhNBw5Ra88=,tag:NS30Y9UmeqWkeLQCccVmiQ==,type:comment]
 # ---------------------------------------------------------------------------- #
 #                          Kubernetes Specific Section                         #
 # ---------------------------------------------------------------------------- #
 extraEnv:
-  WEBHOOK_TUNNEL_URL: ENC[AES256_GCM,data:95SPjc1l80p+2DSCXo91CmTZc7DtZoZ8Gg==,iv:FmluREhtiJkyR2pDoEI/b6esAIyB1yPmHh0cnQIOGVg=,tag:vZy0nwxfhK3KXC/fENMNdw==,type:str]
-  N8N_EDITOR_BASE_URL: ENC[AES256_GCM,data:X0F8vpV5BFVcpmOdTxai6PqOYKsxEH29gA==,iv:5YkFruH4m8abFxmKJ2CYySDB+L7JTaFeYy8Hy1HvJC8=,tag:GVfs2JjZS5Dzre48Z1bQKQ==,type:str]
-  N8N_HOST: ENC[AES256_GCM,data:VgUpoX2VX4UNFz7IIX5w2w==,iv:cq5HRbuGJHWBp+3zygh0ATP7iauT9E0kcDlDFnKEvLk=,tag:eXJiZvREF1CaliDyrJVYOQ==,type:str]
-  N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: ENC[AES256_GCM,data:3I6yqg==,iv:1ztuOCOG0OIPZRzRV0PJT5VTwjVhsWeLttJZd0cx0VE=,tag:0Ei4/9iV34ZcjQiMXWCZ4A==,type:bool]
+    WEBHOOK_TUNNEL_URL: ENC[AES256_GCM,data:95SPjc1l80p+2DSCXo91CmTZc7DtZoZ8Gg==,iv:FmluREhtiJkyR2pDoEI/b6esAIyB1yPmHh0cnQIOGVg=,tag:vZy0nwxfhK3KXC/fENMNdw==,type:str]
+    N8N_EDITOR_BASE_URL: ENC[AES256_GCM,data:X0F8vpV5BFVcpmOdTxai6PqOYKsxEH29gA==,iv:5YkFruH4m8abFxmKJ2CYySDB+L7JTaFeYy8Hy1HvJC8=,tag:GVfs2JjZS5Dzre48Z1bQKQ==,type:str]
+    N8N_HOST: ENC[AES256_GCM,data:VgUpoX2VX4UNFz7IIX5w2w==,iv:cq5HRbuGJHWBp+3zygh0ATP7iauT9E0kcDlDFnKEvLk=,tag:eXJiZvREF1CaliDyrJVYOQ==,type:str]
+    N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: ENC[AES256_GCM,data:3I6yqg==,iv:1ztuOCOG0OIPZRzRV0PJT5VTwjVhsWeLttJZd0cx0VE=,tag:0Ei4/9iV34ZcjQiMXWCZ4A==,type:bool]
 # Set this if running behind a reverse proxy and the external port is different from the port n8n runs on
 persistence:
-  enabled: true
-  type: dynamic
-  storageClass: nfs-client
-  accessModes:
-    - ReadWriteOnce
-  size: 500Mi
+    enabled: true
+    type: dynamic
+    storageClass: nfs-client
+    accessModes:
+        - ReadWriteOnce
+    size: 500Mi
 replicaCount: 1
 deploymentStrategy:
-  type: Recreate
+    type: Recreate
 image:
-  repository: n8nio/n8n
-  pullPolicy: IfNotPresent
-  # tag: "1.8.1"
+    repository: n8nio/n8n
+    pullPolicy: IfNotPresent
+    # tag: "1.8.1"
 service:
-  type: ClusterIP
-  port: 5678
-  annotations: {}
+    type: ClusterIP
+    port: 5678
+    annotations: {}
 ingress:
-  enabled: true
-  annotations:
-    external-dns.alpha.kubernetes.io/hostname: ENC[AES256_GCM,data:UWmcO/ie32A6YTF2Thexeg==,iv:BvwdGabUYzbObnKwumlPbExWXtA90iWswNqlqeWyi74=,tag:Xq3Yt+DprCTAqYIwMJ9+nA==,type:str]
-    external-dns.alpha.kubernetes.io/cloudflare-proxied: ENC[AES256_GCM,data:30/Z8+8=,iv:tapYmiIBm+jF3m6nK1v2+jle12QRvPFuvND0IdBrZH4=,tag:mTGbcmG+It1ZnV49mrKGXg==,type:str]
-    kubernetes.io/ingress.class: ENC[AES256_GCM,data:T3/83i2MIQ==,iv:0j+0h6wZfU65orUVlSPF1TIf5zoEbI7C+Ykdqbz3bCw=,tag:Rn1z3gDY9X5iL7+XU9IHNQ==,type:str]
-  hosts:
-    - host: ENC[AES256_GCM,data:bMeigT8SjzsAY6qa7DZxNg==,iv:m/FVFo9pujF0+zVd8YVR9LixJ2tVAF8EZj1SLFMAY2U=,tag:749JTK+HcrjFcNbDORUCbA==,type:str]
-      paths:
-        - ENC[AES256_GCM,data:RA==,iv:OJyIsHfIKtvbQXRkYQiI5inv5ZMnx8djjI/2RO7LTVE=,tag:/VjOF44N0UAjXxeu2huvnw==,type:str]
+    enabled: true
+    annotations:
+        external-dns.alpha.kubernetes.io/hostname: ENC[AES256_GCM,data:UWmcO/ie32A6YTF2Thexeg==,iv:BvwdGabUYzbObnKwumlPbExWXtA90iWswNqlqeWyi74=,tag:Xq3Yt+DprCTAqYIwMJ9+nA==,type:str]
+        external-dns.alpha.kubernetes.io/cloudflare-proxied: ENC[AES256_GCM,data:30/Z8+8=,iv:tapYmiIBm+jF3m6nK1v2+jle12QRvPFuvND0IdBrZH4=,tag:mTGbcmG+It1ZnV49mrKGXg==,type:str]
+        kubernetes.io/ingress.class: ENC[AES256_GCM,data:T3/83i2MIQ==,iv:0j+0h6wZfU65orUVlSPF1TIf5zoEbI7C+Ykdqbz3bCw=,tag:Rn1z3gDY9X5iL7+XU9IHNQ==,type:str]
+    hosts:
+        - host: ENC[AES256_GCM,data:bMeigT8SjzsAY6qa7DZxNg==,iv:m/FVFo9pujF0+zVd8YVR9LixJ2tVAF8EZj1SLFMAY2U=,tag:749JTK+HcrjFcNbDORUCbA==,type:str]
+          paths:
+            - ENC[AES256_GCM,data:RA==,iv:OJyIsHfIKtvbQXRkYQiI5inv5ZMnx8djjI/2RO7LTVE=,tag:/VjOF44N0UAjXxeu2huvnw==,type:str]
 sops:
-  kms: []
-  gcp_kms: []
-  azure_kv: []
-  hc_vault: []
-  age:
-    - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
-      enc: |
-        -----BEGIN AGE ENCRYPTED FILE-----
-        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBMZGtoMDVKQ3V6YUZHeFQv
-        L1Z0OGlhR1d3UVpMKzZ6UmExanRlRnpMbDMwCkJPSmJrcFlhdGFwc3NUeXRxcVNa
-        M2pPMlJkbE1YUk4rUVF2azFJQy9xaWsKLS0tIDBBc2FrVXVLSzkxMzVYSDBnRWlN
-        SHBXTkZkMjU2VERFRUJnc3lrZVNUcncKpS+MXx+CxV5+UnjM2DGST3NuIKZYpMZu
-        BHsHF2E83PZrrsG/8ryITlLxrMht5bDP3Ua9uqxA11IXZZvKXz1vVw==
-        -----END AGE ENCRYPTED FILE-----
-  lastmodified: "2025-04-04T07:06:58Z"
-  mac: ENC[AES256_GCM,data:EOu9Fiu3pIdKo6nB+CVncrId3Nq/8EM56MXtgOWadv+4j3CWyXUSWspuRREYIXsZzyskzInm0JadYNfQTIxxV4fbuf8KDDEujAtSSCdlbovrmzm2W5Tvb8i34VdSbhQdsfrzSyYmWnqbtwx7C8CAZtwQyxHhp6clWu5ARt/tYBs=,iv:zOtsRZYptNvmOuDa8sjWrr/N6FbaX5Eq0XOhP5NROpM=,tag:rLcDwegHOojzg07K4XswwQ==,type:str]
-  pgp: []
-  encrypted_regex: ^(id|secret|password|extraEnv|encryption_key|data|stringData|host|db)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$
-  version: 3.9.1
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBMZGtoMDVKQ3V6YUZHeFQv
+            L1Z0OGlhR1d3UVpMKzZ6UmExanRlRnpMbDMwCkJPSmJrcFlhdGFwc3NUeXRxcVNa
+            M2pPMlJkbE1YUk4rUVF2azFJQy9xaWsKLS0tIDBBc2FrVXVLSzkxMzVYSDBnRWlN
+            SHBXTkZkMjU2VERFRUJnc3lrZVNUcncKpS+MXx+CxV5+UnjM2DGST3NuIKZYpMZu
+            BHsHF2E83PZrrsG/8ryITlLxrMht5bDP3Ua9uqxA11IXZZvKXz1vVw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-04-11T22:15:58Z"
+    mac: ENC[AES256_GCM,data:5eytORQhMNrp1yPFITL4bqcE7j5myAmJVSAbRPGql/LHReBQN8Asnyq7AiGouFoIagKjMRyivCUe4LBzbAmiTCqrZ0Xvgrjd86NuIL12bol179fRE4Ww9+XRndRSytKLrGJT29ceMxViZqtLXkzH/I33yuamZJAjwZG3+yLSECs=,iv:W0COUShGntRzxyTXKCR7aZf2hLz/ph9JhzpVhZc31a4=,tag:zg42hWVPX96pBaS0k7Bl0A==,type:str]
+    pgp: []
+    encrypted_regex: ^(id|secret|password|extraEnv|encryption_key|data|stringData|host|db)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$
+    version: 3.9.1
