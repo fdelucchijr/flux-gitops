@@ -6,6 +6,7 @@ resources:
   - ./n8n/release.yaml
   - ./n8n/repository.yaml
   - ./directus/release.yaml
+  - ./alert.yaml
 namespace: development
 configurations:
   - kustomizeconfig.yaml
