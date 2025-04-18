@@ -43,9 +43,7 @@ persistence:
         enabled: true
         type: nfs
         server: databases.independents.solarsystem.oraclevcn.com
-        path: /mnt/persistent/nfs/media
-        globalMounts:
-            - path: /media
+        path: /mnt/persistent/nfs/media/
 sops:
     kms: []
     gcp_kms: []
@@ -61,8 +59,8 @@ sops:
             S2VIblZqVVV6V20rdTVGaU4vUVQzNE0Kk1TdG2P05WsMQLIp0uXxOT4LO8UnkdDN
             i4IjyEQF+sRxMj5ks0/HvbswhEBie7qM5A6Yy8pnx3WA1zOFxalg6g==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-18T03:11:01Z"
-    mac: ENC[AES256_GCM,data:zHr+t5nctfQQmNsJoHVmJtR9DM9gZ7q3VJwmTzvXIOtuIJrfFC9rc+3ol2jtI8WizP5bAnaAnwWgi6m5dLjwHQQ7U7AmuwJrkhkHWjbXrZYCFV+E5RGuSYv1uus9tv2wG/25KvfJaH9mouBTnLrCvj68U0kn4F7sTCEeKJMjp4o=,iv:SanJjW5WVEOjZALw08ipunA3GpKQKrtm0oNk9JP1OuA=,tag:9yCQtG1HBWPonpyY8EmTdQ==,type:str]
+    lastmodified: "2025-04-18T03:20:51Z"
+    mac: ENC[AES256_GCM,data:kXkRi+39Xlo8XrJz8mtEAy79OWQtsN3Y6T/+aj1aHBn7L/Gc5w93A2RaXHuqbAjDVydLTTQ12pmNGmIgmQGm7YZoqVtIs0cyXkqOjnFHrxD99zkLXx/IbWDaeiq5wydKQMu58l2hCxfA+VFgMi+TgtdAR8hryTrdTBwwMRWS4/M=,iv:uBUBoOqTgUyLd1mJCKNASagHavDqraLysJLS83M+0o0=,tag:qFdD++T+wGYT7C/6l2L5oQ==,type:str]
     pgp: []
     encrypted_regex: ^(id|secret|password|extraEnv|encryption_key|data|stringData|host|db)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$
     version: 3.9.1
