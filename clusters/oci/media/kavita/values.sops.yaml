@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s/helm-charts/app-template-3.2.0/charts/other/app-template/values.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s/helm-charts/common-3.2.0/charts/library/common/values.schema.json
 controllers:
     main:
         strategy: Recreate
@@ -41,10 +41,9 @@ persistence:
             - path: /kavita/config
     media:
         enabled: true
-        size: 500Mi
-        type: persistentVolumeClaim
-        accessMode: ReadWriteMany
-        storageClass: nfs-client
+        type: nfs
+        server: databases.independents.solarsystem.oraclevcn.com
+        path: /mnt/persistent/nfs/media
         globalMounts:
             - path: /media
 sops:
@@ -62,8 +61,8 @@ sops:
             S2VIblZqVVV6V20rdTVGaU4vUVQzNE0Kk1TdG2P05WsMQLIp0uXxOT4LO8UnkdDN
             i4IjyEQF+sRxMj5ks0/HvbswhEBie7qM5A6Yy8pnx3WA1zOFxalg6g==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-04T08:23:35Z"
-    mac: ENC[AES256_GCM,data:dvkAIj31BL7cplscwWnHnzkEr1wgEXu8oelNZOdEwX2j6arg81bKtMt7qX8+8jmka+NZAcT+Q53NwdswjsR5931MLW1iJ0Hpk7EovwvNebhjLUM2ELkp+2aa4bHZCWs3hp32HbcaUpv0Mh//mXgMZYXIiB/AMtjwzO5QWkotfTs=,iv:wMBgbw4Vf8so9cJCYcpXTT39agkYaL2hoVh2MD7ykxc=,tag:5nfZuhQnngN8ViOWBb1JUQ==,type:str]
+    lastmodified: "2025-04-18T03:11:01Z"
+    mac: ENC[AES256_GCM,data:zHr+t5nctfQQmNsJoHVmJtR9DM9gZ7q3VJwmTzvXIOtuIJrfFC9rc+3ol2jtI8WizP5bAnaAnwWgi6m5dLjwHQQ7U7AmuwJrkhkHWjbXrZYCFV+E5RGuSYv1uus9tv2wG/25KvfJaH9mouBTnLrCvj68U0kn4F7sTCEeKJMjp4o=,iv:SanJjW5WVEOjZALw08ipunA3GpKQKrtm0oNk9JP1OuA=,tag:9yCQtG1HBWPonpyY8EmTdQ==,type:str]
     pgp: []
     encrypted_regex: ^(id|secret|password|extraEnv|encryption_key|data|stringData|host|db)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$
     version: 3.9.1
