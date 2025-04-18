@@ -6,7 +6,6 @@ metadata:
 spec:
   providerRef:
     name: flux-system
-    namespace: flux-system
   eventSeverity: info
   eventSources:
     - kind: GitRepository
