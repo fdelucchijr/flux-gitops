@@ -6,6 +6,7 @@ resources:
   - ./n8n/release.yaml
   - ./n8n/repository.yaml
   - ./directus/release.yaml
+  - ./nocodb/release.yaml
   - ./alert.yaml
 namespace: development
 configurations:
@@ -20,3 +21,6 @@ secretGenerator:
   - name: directus-values
     files:
       - values.yaml=./directus/values.sops.yaml
+  - name: nocodb-values
+    files:
+      - values.yaml=./nocodb/values.sops.yaml
