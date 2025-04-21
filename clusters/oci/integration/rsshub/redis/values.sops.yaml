@@ -1,8 +1,5 @@
 architecture: standalone
-image:
-  registry: ghcr.io
-  repository: zcube/bitnami-compat/redis
-  tag: 6.2
+
 auth:
   enabled: false
 master:

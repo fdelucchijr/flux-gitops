@@ -1,31 +1,27 @@
 enabled: true
 auth:
-    enabled: false
+  enabled: false
 architecture: standalone
 master:
-    persistence:
-        enabled: false
-image:
-    registry: ghcr.io
-    repository: zcube/bitnami-compat/redis
-    tag: 6.2
+  persistence:
+    enabled: false
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age:
-        - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBYZjFNOUVPOG5PTTcwMENa
-            UXRtTVNmK3gxZ2VGWnl3dU03WFF5SlBxQUVFCkFpWUE1MXVwV1RzemVyZ1IxRWNL
-            N244bXN3UTc3VUg2MnpVZHVWN1AyV0kKLS0tIGM2N2tDR3FaK0NFU01TRitsRy8z
-            RHhIMGRBUjdJRmlUVk1YR0dRVEorbFEKZEFaa90cR9PsDZ+N7gztB3Qqq+Z9gJFq
-            dK+WK1TH9riwi/fLjTeuXJyY7iP5yHGT22OIustQLt4b/zm9NDFL3A==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-05T07:57:42Z"
-    mac: ENC[AES256_GCM,data:fB7yUW+55JKf2eQGS2APL5psBxtfXPPJc9GZWsEj0LzPU216wdVwGBP96iBFvbBKtGNsD5tj6aIPADrpucYcvGzGwxvbDr65B0KGUvNWzqEJAJWoJIEKuvkoMKg6lJVPaLkI00e6CrO3FN8YJ1A63GM2cZPGXBEkRly3Zsdhwu0=,iv:44zmJIOMAHbCqIumxtxP4teJUewtqjIdX1GhqVNFGrE=,tag:tcK3keoWm1bFCx9uN0P36w==,type:str]
-    pgp: []
-    encrypted_regex: ^(id|secret|password|extraEnv|env|encryption_key|data|stringData|host|db|influxdb_v2|wildcardHost|clientId|clientSecret)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$
-    version: 3.9.1
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBYZjFNOUVPOG5PTTcwMENa
+        UXRtTVNmK3gxZ2VGWnl3dU03WFF5SlBxQUVFCkFpWUE1MXVwV1RzemVyZ1IxRWNL
+        N244bXN3UTc3VUg2MnpVZHVWN1AyV0kKLS0tIGM2N2tDR3FaK0NFU01TRitsRy8z
+        RHhIMGRBUjdJRmlUVk1YR0dRVEorbFEKZEFaa90cR9PsDZ+N7gztB3Qqq+Z9gJFq
+        dK+WK1TH9riwi/fLjTeuXJyY7iP5yHGT22OIustQLt4b/zm9NDFL3A==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2025-04-05T07:57:42Z"
+  mac: ENC[AES256_GCM,data:fB7yUW+55JKf2eQGS2APL5psBxtfXPPJc9GZWsEj0LzPU216wdVwGBP96iBFvbBKtGNsD5tj6aIPADrpucYcvGzGwxvbDr65B0KGUvNWzqEJAJWoJIEKuvkoMKg6lJVPaLkI00e6CrO3FN8YJ1A63GM2cZPGXBEkRly3Zsdhwu0=,iv:44zmJIOMAHbCqIumxtxP4teJUewtqjIdX1GhqVNFGrE=,tag:tcK3keoWm1bFCx9uN0P36w==,type:str]
+  pgp: []
+  encrypted_regex: ^(id|secret|password|extraEnv|env|encryption_key|data|stringData|host|db|influxdb_v2|wildcardHost|clientId|clientSecret)|(external-dns.alpha.kubernetes.io.*|kubernetes.io/ingress.class.*)$
+  version: 3.9.1
