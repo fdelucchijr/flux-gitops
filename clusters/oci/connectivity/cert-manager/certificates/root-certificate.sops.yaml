@@ -1,0 +1,33 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+    name: root-cert
+spec:
+    secretName: ENC[AES256_GCM,data:zn6S/Qfbp3IhkE7evRJPIg==,iv:e+4ACJPXKTXSKEh8Dcdxily/L9LTOKg7G1xxDQppDqY=,tag:2eWOCulRERO7LEPjScjOaw==,type:str]
+    issuerRef:
+        name: letsencrypt-production
+        kind: ClusterIssuer
+    commonName: ENC[AES256_GCM,data:3+gr1RIjlK9ElcNTis0=,iv:GL9DQTWoal7NUvgWXjQ3E0byCS2WOu88g7Hm8pAMosg=,tag:ZaVLvMuf/+tJYDdOP4A+zQ==,type:str]
+    dnsNames:
+        - ENC[AES256_GCM,data:d41pPtDt265AbAmd,iv:NiPtPSXTvzD1qzmPPU2t5DgERQ0OxexOIvNHZB+KOWM=,tag:OsYbToDUHH/yGE577hsxVg==,type:str]
+        - ENC[AES256_GCM,data:NiaHiOkF9FiC5FjF0iw=,iv:Jkf4e98TSnT27K4UG9pxWEi5jUwvUPmxDq5/fb/UCm0=,tag:5Ip2QBnxW39XrjtR2VF+gA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBQME1tcExqMHFCNXRiQ1dV
+            NHIybTg5ei8rWWhsMTBFU21uVCtxWkMzRUdrCk5NMVBqWkJxa2lZdnIwOUE4WmJQ
+            ZUJNMFUyamNvZVRkMU40U3VhdEJOUWMKLS0tIE56bWxWSTR2MElqMlExS2szdE5C
+            MmhzcHQxcVhjL0wwREs4WHhtWkd1UWcKG8HTXBpRDwftXQEAMQj1n3C8vKd8g6GC
+            sgpIgu+nY0urys78lZip5qVP1On74PkLg4JOdv95xlsf/QOTHA4TIg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-04-24T10:04:04Z"
+    mac: ENC[AES256_GCM,data:Xph3BbskZ1Q1H7s/Yj3PiGxUH4Q9L4QzK2FrtxkqKFt1EkQ7F+iGZs5PzkEzZJkTI8y7XBjGyzSXr+TikvwZRoQ+z2ESEUtD2hJCcLJk23KdY619gc+UVvRIDiz6+lsYjrvlbAEpxyV8fEN0FrfhI3ZPVaVhntcJgCDwJq74mu0=,iv:D3Lr2Pqeu04+Aliw1bLNkwyM1iMxZyVWvzWeUDZQE1c=,tag:XmwjEtcWwpZ1uCga9ns26g==,type:str]
+    pgp: []
+    encrypted_regex: secretName|commonName|dnsNames
+    version: 3.9.1

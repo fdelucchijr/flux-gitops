@@ -1,0 +1,40 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+    name: letsencrypt-production
+spec:
+    acme:
+        server: https://acme-v02.api.letsencrypt.org/directory
+        email: ENC[AES256_GCM,data:IeuttuCApDr0Mi+rmBshSOov14tz,iv:nHS2XnJW/VFNvOI42X/y3wENzsWb4d21rkhVDkHIenM=,tag:9fOtTZqCAoiduYZGI7BCAw==,type:str]
+        privateKeySecretRef:
+            name: letsencrypt-production
+        solvers:
+            - dns01:
+                cloudflare:
+                    email: ENC[AES256_GCM,data:c0F8YTaxQ7UWh2J3y9FrJ3oZjir1,iv:0B/iBfMu+WLFZNRjNU5lPLoMHFmJkPNb1Epaedr7xSc=,tag:p9XMkqL95P8aJ7AweKUZsQ==,type:str]
+                    apiTokenSecretRef:
+                        name: cloudflare-token-secret
+                        key: cloudflare-token
+              selector:
+                dnsZones:
+                    - ENC[AES256_GCM,data:gu3jCQhHMpeyJpXf,iv:gEInxPa4SQmk9Vty9o2yuyX1VQ1iai3JxzmrFvV7t8g=,tag:yoaZgQ/IROqJxt45Mi2Rcg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzd0FOejFWMlpQamVKMXlD
+            RDRHNitwampoOGFzZjFaemlxSXNScktYSGxZCk4vNk92UjgvV3NWb3BObDlWUHpG
+            RVBGcWpQVWdRUFoxVUZIVnRLcHBGdEUKLS0tIEFVK1VYOXRHbDhGUWhCWVFmM1Qv
+            R3NacnZLNWhMYUZ6djJFWFR5N3RRcDAKLzzwzTETlfeIHUYuNrDPF0BTxBzF5fPz
+            zrtmRlO+nLZsH55Tx2vRvdh9w6sR5g32XBAhD+AvsPt/6IbDurplBA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-04-24T10:00:17Z"
+    mac: ENC[AES256_GCM,data:tZR9Z1a+ixFENyULTddzunM63SF9aZK0uxDDoLpTOolApcfgRn9/3XQZFnJq2wrYh8pxRAXVhy06WbI/DKDiCe3SFkPT2XnnmSa51j63C6BocIoYQJOT18Cff8uZ7LOwisdRO8Jl2O+qhqjd+3JagsgkTxlbbmUArAZ4EAsxCzU=,iv:P1/4JRYm2P3oiZZYQIkYMwvBs0xXfZWJdNDLld8LtuU=,tag:kUWAnOuAgoKo75c+9wrO9g==,type:str]
+    pgp: []
+    encrypted_regex: email|dnsZones
+    version: 3.9.1

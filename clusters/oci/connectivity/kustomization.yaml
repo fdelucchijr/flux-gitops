@@ -1,0 +1,26 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: connectivity-stack
+resources:
+  - "./namespace.yaml"
+  - "./cert-manager/release.yaml"
+  - "./cert-manager/issuers/cloudflare-token.sops.yaml"
+  - "./cert-manager/issuers/lets-enc-prod.sops.yaml"
+  - "./cert-manager/issuers/lets-enc-stag.sops.yaml"
+  - "./cert-manager/certificates/media.certificate.sops.yaml"
+  - "./cert-manager/certificates/root-certificate.sops.yaml"
+  - "./external-dns/release.yaml"
+  - "./traefik/release.yaml"
+  - "./traefik/middlewares/monica_cardav.yaml"
+configurations:
+  - kustomizeconfig.yaml
+secretGenerator:
+  - name: cert-manager-values
+    files:
+      - values.yaml=./cert-manager/values.yaml
+  - name: external-dns-values
+    files:
+      - values.yaml=./external-dns/values.sops.yaml
+  - name: traefik-values
+    files:
+      - values.yaml=./traefik/values.sops.yaml

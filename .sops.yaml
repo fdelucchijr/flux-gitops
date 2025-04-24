@@ -8,7 +8,7 @@ creation_rules:
   #   age: >-
   #     age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
 
-  - path_regex: secret.sops.yaml
+  - path_regex: "^.*.sops.yaml$"
     encrypted_regex: "^(data|stringData)$"
     age: >-
       age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6

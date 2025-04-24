@@ -1,0 +1,25 @@
+installCRDs: true
+replicaCount: 1
+extraArgs:
+  - --dns01-recursive-nameservers=1.1.1.1:53,9.9.9.9:53
+  - --dns01-recursive-nameservers-only
+podDnsPolicy: None
+podDnsConfig:
+  nameservers:
+    - "1.1.1.1"
+    - "9.9.9.9"
+
+webhook:
+  replicaCount: 1
+
+prometheus:
+  enabled: false
+
+# Soluciones para tls del webhook fallando
+cainjector:
+  enabled: true
+global:
+  leaderElection:
+    namespace: "connectivity-stack"
+clusterResourceNamespace: "connectivity-stack"
+namespace: "connectivity-stack"

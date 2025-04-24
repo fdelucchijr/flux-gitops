@@ -1,0 +1,185 @@
+additionalArguments: []
+additionalVolumeMounts: []
+affinity: {}
+autoscaling:
+    enabled: false
+deployment:
+    additionalContainers: []
+    additionalVolumes: []
+    annotations: {}
+    dnsPolicy: ClusterFirstWithHostNet
+    enabled: true
+    imagePullSecrets: []
+    initContainers: []
+    kind: Deployment
+    labels: {}
+    minReadySeconds: 0
+    podAnnotations: {}
+    podLabels: {}
+    replicas: 1
+    shareProcessNamespace: false
+    terminationGracePeriodSeconds: 60
+experimental:
+    http3:
+        enabled: false
+    kubernetesGateway:
+        enabled: false
+    plugins:
+        enabled: true
+globalArguments:
+    - --api=true
+    - --global.checknewversion
+    - --global.sendanonymoususage
+    - --serverstransport.insecureskipverify=true
+hostNetwork: false
+image:
+    name: traefik
+    pullPolicy: IfNotPresent
+ingressClass:
+    enabled: false
+    fallbackApiVersion: ""
+    isDefaultClass: true
+ingressRoute:
+    dashboard:
+        annotations: {}
+        enabled: true
+        labels: {}
+livenessProbe:
+    failureThreshold: 3
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 2
+tlsStore:
+    default:
+        certificates:
+            - secretName: ENC[AES256_GCM,data:5ACVsdxLRaJKwFRFgR1bBVELqaSOeA==,iv:HTeJPC6gmad+D0Pb9qgpAfvfcKmyfuCNMDvi2PRMQco=,tag:Agga3IKp5UNAKRAcdY5Zfw==,type:str]
+        defaultCertificate:
+            secretName: ENC[AES256_GCM,data:+a2KgxITtm1P36W3QYG26g==,iv:8kGAMyLjaiWxyqqJhpgW8R6MAxZtB/cyLkfr/FQhFIY=,tag:0xii9ceGh3EcKHxGExJFGQ==,type:str]
+logs:
+    access:
+        enabled: false
+        fields:
+            general:
+                defaultmode: keep
+                names: {}
+            headers:
+                defaultmode: drop
+                names: {}
+        filters: {}
+    general:
+        level: DEBUG
+metrics:
+    prometheus:
+        entryPoint: metrics
+persistence:
+    enabled: false
+pilot:
+    enabled: ENC[AES256_GCM,data:fI2eNw==,iv:yHWQwG/znvW4pxWqq/KHTmbHdjeKODS8m5p9GPnp7rA=,tag:OaNDIIyrip90agNKQ5otqw==,type:bool]
+    token: ENC[AES256_GCM,data:H7Fne8UVleBth1+ko+Yle9prlwe2wCKgE6BOcxp1dkhUMrUh,iv:hDgI3aHHTqtBVS2wMXU5nYdivm9W3+af6WDgko5UoFE=,tag:etID6loVfuGXrQpgaeVC4Q==,type:str]
+ports:
+    metrics:
+        expose: true
+        exposedPort: 4600
+        port: 4600
+        protocol: TCP
+    portainer:
+        expose: false
+        exposedPort: 9001
+        port: 9001
+        protocol: TCP
+    traefik:
+        expose: true
+        exposedPort: 9000
+        port: 9000
+        protocol: TCP
+    web:
+        expose: true
+        exposedPort: 80
+        port: 8000
+        protocol: TCP
+        redirectTo: websecure
+    websecure:
+        expose: true
+        exposedPort: 443
+        port: 8443
+        http3: false
+        protocol: TCP
+        tls:
+            enabled: true
+priorityClassName: ""
+providers:
+    kubernetesCRD:
+        allowCrossNamespace: true
+        allowExternalNameServices: true
+        enabled: true
+        namespaces: []
+    kubernetesIngress:
+        allowEmptyServices: true
+        allowExternalNameServices: true
+        enabled: true
+        namespaces: []
+        publishedService:
+            enabled: true
+rbac:
+    enabled: true
+    namespaced: false
+readinessProbe:
+    failureThreshold: 1
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 2
+resources: {}
+rollingUpdate:
+    maxSurge: 1
+    maxUnavailable: 1
+securityContext:
+    capabilities:
+        drop:
+            - ALL
+    readOnlyRootFilesystem: true
+    runAsGroup: 0
+    runAsNonRoot: false
+    runAsUser: 0
+service:
+    annotations:
+        oci-network-load-balancer.oraclecloud.com/backend-policy: ENC[AES256_GCM,data:9bN1ViL4A+FzZrY=,iv:jGhbcFNnzDKUTiBXss7Ynnh/D1sD99GP2EHjLzuJT7w=,tag:s8atYK62aKI3aG1EsGrcoQ==,type:str]
+        oci.oraclecloud.com/load-balancer-type: ENC[AES256_GCM,data:nOsR,iv:gMmZRZcNObg2O7+wOGVeD4HUiMxq7ApiCPq0cQEXmr8=,tag:64CZ9EP15GcW5OwysntZfA==,type:str]
+        oci.oraclecloud.com/oci-network-security-groups: ENC[AES256_GCM,data:ZSIGzMSJo0NN9ZhxeScuZBTPsyPTV+du3EKWnfvObC1aVOfo3D0rKgNDnfFjMfK5DnUeJf/gDKFF3IIiZPtplCWr+cEBB/mHlWeoMxxKTcPWK69ZrdOmtSybV/UYIIvvfRhF1luYJ0at,iv:xOGBjAAHcQ6myKo/hSLgfQN0/3OwYfV2/VWTBMcBlHY=,tag:eewLU/eIz8wxE2gzwiL8ZA==,type:str]
+    annotationsTCP: {}
+    annotationsUDP: {}
+    enabled: ENC[AES256_GCM,data:aHsP9A==,iv:VGnhgRA3BcOmyshgis6CNtzGpQhdTw+RHh/wG9v2RRY=,tag:cLakLvjQqjqv1bRW2eauaA==,type:bool]
+    externalIPs: []
+    labels: {}
+    loadBalancerSourceRanges: []
+    spec:
+        externalTrafficPolicy: ENC[AES256_GCM,data:9HVWRXA=,iv:4zhG8as4RhU4xA9Wppurw/8YO5wh4jJrdoLn5iYtULQ=,tag:d9383TG+yAU2e5HOPIs+2A==,type:str]
+    type: ENC[AES256_GCM,data:lXx7qpY52K9sfOJA,iv:WqFe8/D5p+xtZ22lKbr8ewq0a0NDpRh/yQ5hSaULmpg=,tag:z7qT2MJ8KyinYnkqqmspuQ==,type:str]
+serviceAccount:
+    name: ""
+serviceAccountAnnotations: {}
+tlsOptions: {}
+tolerations: []
+tracing: {}
+volumes: []
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBvUUdRbTh0NmVEVkVraWV0
+            VWdKNmlwKzBXdWx6WFRKYnNoUXo0dFRJdWtzCkJ0OHRkQ3d5OWxCYXFDbEpaZHQr
+            bERwS2NTUUNFTUNKcFI3dXlsUjZoK2cKLS0tIDhHb0ZPMXZNNktwTnFrdmZHOHBk
+            YmxyeUlsSVQ1K1VNcC93RnRIOUZsZUEKFS+bO/dPypz3PiM2/L8HWaONZBNLE6Bh
+            JzSExtlHmpm4oRa2ugTdzTZk+JE4uHwG/3KSwmvwFkjfB01cRY+vVg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-04-24T10:14:03Z"
+    mac: ENC[AES256_GCM,data:UWQAnjzrkX+Zeq3OHGTNrQlbBN5VSu4WEPVQVo6toIMaCR1aBp/6jdyOIePdr8LFVbWhsBs8ZRB5QrbCrUmfL8ioIpN232I8JtvOmjQfRa2DOPA0k+mzcJzJlqOE5v0DFZrqOSt/8/R6lDNj0iPixHeLUDV8/4G4U2J07hRqaDo=,iv:TUaKoXiS6C1nuu8zlO7r4Ll++deOrHPoN7EV4yLUHvM=,tag:h0Lkh8/X7jZMUbHxESUygA==,type:str]
+    pgp: []
+    encrypted_regex: annotations|tlsStore|pilot|service
+    version: 3.9.1

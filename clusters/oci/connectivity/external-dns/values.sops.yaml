@@ -1,0 +1,130 @@
+# Default values for external-dns.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+image:
+    repository: registry.k8s.io/external-dns/external-dns
+    # Overrides the image tag whose default is v{{ .Chart.AppVersion }}
+    tag: ""
+    pullPolicy: IfNotPresent
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+commonLabels: {}
+serviceAccount:
+    # Specifies whether a service account should be created
+    create: true
+    # Annotations to add to the service account
+    annotations: {}
+    # The name of the service account to use.
+    # If not set and create is true, a name is generated using the fullname template
+    name: ""
+rbac:
+    # Specifies whether RBAC resources should be created
+    create: true
+    additionalPermissions:
+        - apiGroups:
+            - traefik.containo.us
+            - traefik.io
+          resources:
+            - ingressroutes
+            - ingressroutetcps
+            - ingressrouteudps
+          verbs:
+            - get
+            - watch
+            - list
+# Annotations to add to the Deployment
+deploymentAnnotations: {}
+podLabels: {}
+# Annotations to add to the Pod
+podAnnotations: {}
+shareProcessNamespace: false
+podSecurityContext:
+    fsGroup: 65534
+securityContext:
+    runAsNonRoot: true
+    runAsUser: 65534
+    readOnlyRootFilesystem: true
+    capabilities:
+        drop:
+            - ALL
+priorityClassName: ""
+terminationGracePeriodSeconds: null
+serviceMonitor:
+    enabled: false
+    additionalLabels: {}
+    interval: 1m
+    scrapeTimeout: 10s
+env:
+    - name: ENC[AES256_GCM,data:7KFvNAtftAIzxpnS,iv:LRN96K50g3IUY/VgO28PaZoLyaOhv/kNfzY56IfK9Ao=,tag:DEgphRw6XDN6E13G5cSzWg==,type:str]
+      value: ENC[AES256_GCM,data:8twMXg9HFMWnDay7wNNeNMpdjlVz,iv:/2/5pZT5qK3hDZuBfSaBVaI8nvvAMXGYvR57RR6eiNM=,tag:yiM4Rc80sypKxnIzdFb3yA==,type:str]
+    - name: ENC[AES256_GCM,data:HHMI0cJNeLkxm5hK,iv:LSPZ2sIz1zRj1PTZY6p0fP2IcKpGL1/+EMM/E29RhYM=,tag:ZZPlA4o2g7F3QHrRY6R9GQ==,type:str]
+      value: ENC[AES256_GCM,data:H5UJAkMZFd+tDYN6jg3TWHDM0MuuwmMPk6U0LoEsYjaf1gyCzsqUGg==,iv:810tQANocDE8Fv9YWfHBiIIFy2pGKmiuY2DhrAWYMz8=,tag:nk3Mh2+SQQXKSo+NSU3ELg==,type:str]
+livenessProbe:
+    httpGet:
+        path: /healthz
+        port: http
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 2
+    successThreshold: 1
+readinessProbe:
+    httpGet:
+        path: /healthz
+        port: http
+    initialDelaySeconds: 5
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 6
+    successThreshold: 1
+service:
+    port: 7979
+    annotations: {}
+extraVolumes: []
+extraVolumeMounts: []
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
+topologySpreadConstraints: []
+logLevel: info
+logFormat: text
+interval: 1m
+triggerLoopOnEvent: false
+sources:
+    # - service
+    - ingress
+    - traefik-proxy
+policy: upsert-only
+registry: txt
+txtOwnerId: ""
+txtPrefix: ""
+txtSuffix: ""
+domainFilters: []
+provider: cloudflare
+extraArgs:
+    - ENC[AES256_GCM,data:KMQ0CmOEclh6/efx8t7CZ70HVok=,iv:xsJoAzE8Lu+Sz9hdcf4TECVrzGj+jroG6AM9ju7xFOU=,tag:4Oc8z1DHklZAaDYbl9z4SQ==,type:str]
+    - ENC[AES256_GCM,data:ft5aapqak/GdYYrL09U8G57VBPahO26WNpA1LGHw6g==,iv:+NvRWU5WKRDdKdmiKz6FFIzLsh5aRfaibETq+JUy1qQ=,tag:CmQfE5ECItVEv+lnUHZghw==,type:str]
+    - ENC[AES256_GCM,data:IBe/793R5PoTXMnjOjm+kPIvzjbmjTxNbxiVpCWSyvw=,iv:YH5PLEBnVXPJAN1cfoRA/0fLUnTPvMdaiGN+OTucj2s=,tag:lUvdzVCZXUJdS+Ynd85ejw==,type:str]
+    - ENC[AES256_GCM,data:3+IpmHJw8DNpfRobN+GtWIGlWxxardPuEtRhmg==,iv:GGqhhhg8EndOEYREVDhRP8Uh10PP4EbirAG39onxJP8=,tag:6dL782YzYrp3R7RZHAJKmQ==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1u9xhf474aapqtea5myafnd6asdwv8nldgu2gefxcvdl2869zddwspsdqu6
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBya1ZmelJSRUUxMSswYUZm
+            SEIxVjNsenZ2WHBtdEtub05JVFFucXZ5SnhvCmdybWQ3Z2tCeWsyNnluSmhyNFhh
+            SmVHYys2RFE0ei9mQ20rUDRJMGQzazAKLS0tIEozSFA1S0tGRWNST1VyTkU0OXpk
+            K3AxeGhIY1Ayc0YyUWVqekt1RmdEOU0KTFPYm5ACt8jg33jWghKI+S4VJk8C1rdc
+            C1uAzWWBMK7pPuz0XTAT+oJ648KVyzrd04NfidRRSazYC7ciuOpVDQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-04-24T10:08:25Z"
+    mac: ENC[AES256_GCM,data:JwUda5dNncQSG030We1KxoxG6eh+cmxhIqDFe9//w07qN5jXfwiK1JYv+u/wzkD3diUxZGzAoHm34HGDsw2pq7lxP3NGqkTssew/JgYdRF7rEbrn2vC0Z1ffsy5hCSPAoNtvkUGZ8Rn4mT9DSv56L3ra457F4z66KeuYYm0kw3Y=,iv:h5L8moGS7LOgY3f9Y6L93UMu69xkAT9W26/PSIFp6nk=,tag:s41syKQWww+GMBCANBl/sQ==,type:str]
+    pgp: []
+    encrypted_regex: env|extraArgs
+    version: 3.9.1
