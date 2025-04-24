@@ -24,20 +24,16 @@ experimental:
         enabled: false
     kubernetesGateway:
         enabled: false
-    plugins:
-        enabled: true
+        # plugins:
+        #     enabled: true
 globalArguments:
     - --api=true
     - --global.checknewversion
     - --global.sendanonymoususage
     - --serverstransport.insecureskipverify=true
 hostNetwork: false
-image:
-    name: traefik
-    pullPolicy: IfNotPresent
 ingressClass:
     enabled: false
-    fallbackApiVersion: ""
     isDefaultClass: true
 ingressRoute:
     dashboard:
@@ -79,31 +75,41 @@ pilot:
     token: ENC[AES256_GCM,data:H7Fne8UVleBth1+ko+Yle9prlwe2wCKgE6BOcxp1dkhUMrUh,iv:hDgI3aHHTqtBVS2wMXU5nYdivm9W3+af6WDgko5UoFE=,tag:etID6loVfuGXrQpgaeVC4Q==,type:str]
 ports:
     metrics:
-        expose: true
+        expose:
+            default: false
         exposedPort: 4600
         port: 4600
         protocol: TCP
     portainer:
-        expose: false
+        expose:
+            default: false
         exposedPort: 9001
         port: 9001
         protocol: TCP
     traefik:
-        expose: true
+        expose:
+            default: true
         exposedPort: 9000
         port: 9000
         protocol: TCP
     web:
-        expose: true
+        expose:
+            default: true
         exposedPort: 80
         port: 8000
         protocol: TCP
-        redirectTo: websecure
+        redirections:
+            entryPoint:
+                to: websecure
+                scheme: https
+                permanent: true
     websecure:
-        expose: true
+        expose:
+            default: true
         exposedPort: 443
         port: 8443
-        http3: false
+        http3:
+            enabled: false
         protocol: TCP
         tls:
             enabled: true
@@ -178,8 +184,8 @@ sops:
             YmxyeUlsSVQ1K1VNcC93RnRIOUZsZUEKFS+bO/dPypz3PiM2/L8HWaONZBNLE6Bh
             JzSExtlHmpm4oRa2ugTdzTZk+JE4uHwG/3KSwmvwFkjfB01cRY+vVg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-24T10:14:03Z"
-    mac: ENC[AES256_GCM,data:UWQAnjzrkX+Zeq3OHGTNrQlbBN5VSu4WEPVQVo6toIMaCR1aBp/6jdyOIePdr8LFVbWhsBs8ZRB5QrbCrUmfL8ioIpN232I8JtvOmjQfRa2DOPA0k+mzcJzJlqOE5v0DFZrqOSt/8/R6lDNj0iPixHeLUDV8/4G4U2J07hRqaDo=,iv:TUaKoXiS6C1nuu8zlO7r4Ll++deOrHPoN7EV4yLUHvM=,tag:h0Lkh8/X7jZMUbHxESUygA==,type:str]
+    lastmodified: "2025-04-24T11:02:39Z"
+    mac: ENC[AES256_GCM,data:8xQtKEIRybysLz5YjR3aAEgrHgOgzU0gACcT3tdfsixli4EVURN0hhRJnWjDHFA9oTARBclMYjPrCtbuOsloKy7s5dznP/1b1MUMny98hXp0u6EytoTfoo46G8alsv11qT1i7sDgFIEyvBom4+mL1COzhc1n37FDPl9mjT0OkW8=,iv:ROj+3XU4Qr4ri5DdOSRizZ7zaPJ8c6vfswlBlGSKypA=,tag:KG7/HDDhs6pC/t1m/E3BnA==,type:str]
     pgp: []
     encrypted_regex: annotations|tlsStore|pilot|service
     version: 3.9.1
